@@ -1,0 +1,126 @@
+Splash: 
+  name: 'Splash'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 5
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'True'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '999'
+      children: 
+        Offset-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            forward-base: '0.3'
+            forward-scale: '0'
+            upward-base: '0.4'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Particle Animation-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                steps: '5'
+                frequency: '0.05'
+                angle: '90'
+                start: '0'
+                duration-base: '0.1'
+                duration-scale: '0'
+                h-translation-base: '0'
+                h-translation-scale: '0'
+                v-translation-base: '-1'
+                v-translation-scale: '0'
+                h-cycles: '1'
+                v-cycles: '1'
+                particle: 'Crit'
+                arrangement: 'Circle'
+                direction: 'XZ'
+                radius-base: '0'
+                radius-scale: '0'
+                particles-base: '2'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0'
+                forward: '1'
+                upward: '1.5'
+                right: '-0.9'
+                -with-rotation: 'False'
+              children:  {}
+        Linear-d: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            range-base: '3'
+            range-scale: '0'
+            tolerance-base: '1.5'
+            tolerance-scale: '0'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+          children: 
+            Damage-e: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'damage'
+                counts: 'True'
+                type: 'Damage'
+                value-base: '1'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                knockback: 'True'
+              children:  {}

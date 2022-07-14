@@ -1,0 +1,38 @@
+Hunter: 
+  name: 'Hunter'
+  action-bar: ''
+  prefix: '&2Охотник'
+  group: 'class'
+  mana: '&2Энергия'
+  max-level: 21
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '2'
+    mana-base: '20'
+    mana-scale: '5'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Shrapnel'
+  - 'Speed Boost'
+  - 'Trap'
+  - 'Power Shot'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dОхотник...'
+  exp-source: 273

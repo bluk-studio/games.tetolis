@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 188.168.253.107
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1646412916164
+  login: 1646411138959
+money: '0'
+last-account-name: thehomelessgun
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -65.8533275973902
+  y: -2.0
+  z: -43.87524002787568
+  yaw: 170.9385986328125
+  pitch: 19.505809783935547
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -233.46081706681306
+  y: -1.7508129212553185
+  z: -18.100977440200374
+  yaw: 90.60723114013672
+  pitch: 43.605010986328125

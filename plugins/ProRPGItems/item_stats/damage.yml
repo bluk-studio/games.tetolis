@@ -1,0 +1,69 @@
+_vanilla_generic:
+  priority: 50
+  name: 'Ванильный'
+  format: '&6⚔ %name%: &f%value%'
+  attached-damage-causes:
+  - DROWNING
+  - STARVATION
+  - SUFFOCATION
+  - SUICIDE
+  - THORNS
+  - VOID
+  on-hit-actions: {}
+  biome-damage-modifier: {}
+  entity-type-modifier: {}
+  mythic-mob-faction-modifier: {}
+
+physical:
+  priority: 1000
+  name: 'Физический Урон'
+  format: '&6⚔ %name%: &f%value%'
+  attached-damage-causes: []
+  on-hit-actions: {}
+  biome-damage-modifier:
+    PLAINS: 1.0
+  entity-type-modifier:
+    PIG: 1.0
+  mythic-mob-faction-modifier:
+    faction: 1.0
+
+elemental:
+  priority: 10
+  name: 'Элементальный Урон'
+  format: '&d⚡ %name%: &f%value%'
+  attached-damage-causes: []
+  on-hit-actions: {}
+  biome-damage-modifier:
+    PLAINS: 1.0
+  entity-type-modifier:
+    PIG: 1.0
+  mythic-mob-faction-modifier:
+    faction: 1.0
+
+light:
+  priority: 10
+  name: 'Светлый Урон'
+  format: '&c☀ %name%: &f%value%'
+  attached-damage-causes: []
+  on-hit-actions: {}
+  biome-damage-modifier:
+    PLAINS: 1.0
+    NETHER: 1.0
+  entity-type-modifier:
+    PIG: 1.0
+  mythic-mob-faction-modifier:
+    faction: 1.0
+
+dark:
+  priority: 10
+  name: 'Тёмный Урон'
+  format: '&a☣ %name%: &f%value%'
+  attached-damage-causes: []
+  on-hit-actions: {}
+  biome-damage-modifier:
+    PLAINS: 1.0
+    SWAMPLAND: 1.0
+  entity-type-modifier:
+    PIG: 1.0
+  mythic-mob-faction-modifier:
+    faction: 1.0

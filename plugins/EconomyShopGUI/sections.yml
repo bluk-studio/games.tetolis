@@ -1,0 +1,132 @@
+# Customize this file to change all shop items inside the main shop screen
+# For more info about this file, please visit our wiki here: https://gpplugins.gitbook.io/economyshopgui/file-configuration/sections.yml
+
+ShopSections:
+
+  Dyes:
+    enable: true
+    material: CYAN_DYE
+    displayname: '&2&lDyes'
+    place: 23
+
+  SpawnEggs:
+    enable: false
+    material: BAT_SPAWN_EGG
+    displayname: '&8&lSpawnEggs'
+    place: 4
+
+  Z_EverythingElse:
+    enable: false
+    material: BEDROCK
+    displayname: Z_EverythingElse
+    place: 41
+  Blocks:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aBlocks'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Blocks.'
+  Decoration:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aDecoration'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Decoration.'
+  Enchanting:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aEnchanting'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Enchanting.'
+  Farming:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aFarming'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Farming.'
+  Food:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aFood'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Food.'
+  Mobs:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aMobs'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Mobs.'
+  Music:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aMusic'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Music.'
+  Ores:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aOres'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Ores.'
+  Others:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aOthers'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Others.'
+  Potions:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aPotions'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Potions.'
+  Redstone:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aRedstone'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Redstone.'
+  Spawners:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aSpawners'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Spawners.'
+  Workstations:
+    enable: false
+    material: COAL_BLOCK
+    place: ''
+    displayname: '&aWorkstations'
+    lore:
+    - '&4This example shop section was added to the shop'
+    - '&4because the sections.yml did not contain section Workstations.'
+
+Fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+# displayname: "&8Nothing here"
+  #Disable this item by setting this value to false
+  enable: true

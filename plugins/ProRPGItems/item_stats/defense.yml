@@ -1,0 +1,31 @@
+physical:
+  priority: 100
+  name: 'Физическая Защита'
+  format: '&6▸ %name%: &f%value%'
+  block-damage-types:
+  - physical
+  protection-factor: 0.75
+
+elemental:
+  priority: 10
+  name: 'Элементальная Защита'
+  format: '&d▸ %name%: &f%value%'
+  block-damage-types:
+  - elemental
+  protection-factor: 0.25
+
+light:
+  priority: 10
+  name: 'Светлая Защита'
+  format: '&c▸ %name%: &f%value%'
+  block-damage-types:
+  - light
+  protection-factor: 0.25
+
+dark:
+  priority: 10
+  name: 'Тёмная защита'
+  format: '&a▸ %name%: &f%value%'
+  block-damage-types:
+  - dark
+  protection-factor: 0.25

@@ -1,0 +1,56 @@
+# On script loadon script load:
+on script load: 
+  wait 1 second
+
+  FurnitureShop_loadConfig()
+
+function FurnitureShop_loadConfig():
+  # Loading (or reLoading) all config files
+  set {_entities::*} to "Furniture=Furniture_loadItem=Furniture", "RentableArea=RentableAreas_loadArea" and "FurnitureShop=FurnitureShop_loadShop"
+
+  loop {_entities::*}:
+    # Unloading all yaml files
+    loop all of the currently loaded yaml files:
+      unload yaml loop-value-2
+
+    # Preparing
+    set {_temp::*} to loop-value split at "="
+    
+    set {_folder} to {_temp::1}
+    set {_handler} to {_temp::2}
+
+    # Loading all yaml files from folder
+    load all yaml from directory "/plugins/%{_folder}%/entities"
+    loop all of the currently loaded yaml files:
+      set {_file} to loop-value-2
+
+      loop all yaml nodes of {_file}:
+        set {_path} to loop-value-3
+
+        if {_path} ends with "name" or "locations":
+          # Replacing
+          replace all ".name" and ".locations" in {_path} with ""
+
+          # Calling function
+          evaluate "%{_handler}%(""%{_file}%"", ""%{_path}%"")"
+
+function FurnitureShop_unload():
+  # Deleting all entities
+  loop {furniture::entities::*}:
+    kill loop-value
+
+  # Deleting all holograms
+  loop {furniture::shop::*}:
+    loop {furniture::shop::%loop-index%::holograms::*}:
+      delete hologram loop-value-2
+
+  delete {furniture::*}
+  delete {area::*}
+
+  loop all bounds:
+    if id of loop-bound starts with "furniture" or "area":
+      delete bound with id id of loop-bound
+
+# Deleting all cached config info
+on script unload:
+  FurnitureShop_unload()

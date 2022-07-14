@@ -1,0 +1,35 @@
+limit: 3
+active: 1
+health: 60.0
+mana: 120.0
+accounts: 
+  acc1: 
+    classes: 
+      Hunter: 
+        level: 21
+        points: 17
+        exp: 0.0
+    skills: 
+      Power Shot: 
+        level: 1
+        points: 0
+      Shrapnel: 
+        level: 1
+        points: 0
+      Trap: 
+        level: 1
+        points: 0
+      Speed Boost: 
+        level: 1
+        points: 0
+    binds:  {}
+    combos: 
+      shrapnel: 'L L L L'
+      speed boost: 'L L L R'
+      trap: 'L L L LS'
+      power shot: 'L L L RS'
+    attrib-points: 20
+    attribs:  {}
+    hover:  {}
+    instant:  {}
+    hunger: 1.0

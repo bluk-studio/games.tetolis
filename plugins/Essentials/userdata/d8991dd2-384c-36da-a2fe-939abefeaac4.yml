@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 45.157.214.227
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1654340662377
+  login: 1654339670134
+money: '0'
+last-account-name: Kota_ST
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 112.58820540001238
+  y: 2.0244240882136797
+  z: -18.839622787915946
+  yaw: 106.6661376953125
+  pitch: 12.628223419189453
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 118.4482270254903
+  y: -3.0
+  z: -320.94709398125514
+  yaw: -5.443359375
+  pitch: 24.299819946289062

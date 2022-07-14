@@ -1,0 +1,5 @@
+function FurnitureShop_getTraitText(trait: string) :: string:
+  if {_trait} is "isSittable":
+    return "&a| &fМожно сидеть"
+  else if {_trait} is "isStorage":
+    return "&a| &fМожно хранить вещи"

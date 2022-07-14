@@ -1,0 +1,63 @@
+limit: 3
+active: 1
+health: 20.0
+mana: 110.0
+accounts: 
+  acc1: 
+    classes: 
+      Ninja: 
+        level: 21
+        points: 0
+        exp: 0.0
+    skills: 
+      Dart: 
+        level: 3
+        points: 0
+      Ghost: 
+        level: 6
+        points: 0
+      Power Shot: 
+        level: 0
+        points: 0
+      Smoke: 
+        level: 6
+        points: 0
+      Zero Trap: 
+        level: 6
+        points: 0
+      Shrapnel: 
+        level: 0
+        points: 0
+      Trap: 
+        level: 0
+        points: 0
+      Speed Boost: 
+        level: 0
+        points: 0
+    binds:  {}
+    bar: 
+      enabled: 'true'
+      slots: 
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      Smoke: 1
+      Zero Trap: 2
+      Dart: 3
+    combos: 
+      smoke: 'L L L L'
+      trap: 'L L R L'
+      dart: 'L L L R'
+      power shot: 'L L R R'
+      zero trap: 'L L L LS'
+      shrapnel: 'L L L RS'
+      speed boost: 'L L L P'
+    attrib-points: 20
+    attribs:  {}
+    hover:  {}
+    instant:  {}
+    hunger: 1.0
+    extra: 
+      combatItems: '9;'

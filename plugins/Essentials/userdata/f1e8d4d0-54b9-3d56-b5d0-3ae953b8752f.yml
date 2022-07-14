@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 87.244.157.23
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1656074625174
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1656095007184
+  login: 1656083769297
+money: '0'
+last-account-name: Dogleash
+lastlocation:
+  world: f42b6750-1990-4729-aeb9-6cd1b3fb5d06
+  world-name: world_nether
+  x: 0.7917017877926278
+  y: 88.0
+  z: -19.71328327396169
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 11.46879549564683
+  y: -3.0625
+  z: -256.4074843893757
+  yaw: -66.43408203125
+  pitch: 11.360095977783203

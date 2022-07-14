@@ -1,0 +1,47 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 188.253.232.228
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1653592858349
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655708302885
+  login: 1655708289136
+money: '0'
+last-account-name: 3Lord3
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -187.4666077258747
+  y: 13.885908678673367
+  z: 213.9996865117185
+  yaw: -88.69107055664062
+  pitch: 23.922298431396484
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -150.5380417997534
+  y: 3.0
+  z: 211.49192935164112
+  yaw: -176.92991638183594
+  pitch: -5.099749565124512
+homes:
+  home:
+    world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+    world-name: world
+    x: 159.56305488599978
+    y: 19.296492172569945
+    z: -469.82175827979916
+    yaw: 79.18634033203125
+    pitch: 47.619384765625

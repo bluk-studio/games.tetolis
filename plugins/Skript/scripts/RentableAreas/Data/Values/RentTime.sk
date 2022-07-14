@@ -1,0 +1,24 @@
+function RentableAreas_Data_getRentTo(areaId: string) :: date:
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    set {_rentTo} to yaml value "rentTo" from "area-%{_id}%"
+
+    replace all "s" in {_rentTo} with ""
+    set {_rentTo} to {_rentTo} parsed as number
+
+    return unix date of {_rentTo}
+
+function RentableAreas_Data_setRentTo(areaId: string, rentTo: date):
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    set yaml value "rentTo" from "area-%{_id}%" to "s%unix timestamp of {_rentTo}%"
+
+function RentableAreas_Data_deleteRentTo(areaId: string):
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    delete yaml value "rentTo" from "area-%{_id}%"
+
+function RentableAreas_Data_addToRentTo(areaId: string, timeToAdd: date):
+  set {_rentTo} to RentableAreas_Data_getRentTo({_areaId})
+  add {_timeToAdd} to {_rentTo}
+  RentableAreas_Data_setRentTo({_areaId}, {_rentTo})

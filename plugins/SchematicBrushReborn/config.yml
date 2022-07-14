@@ -1,0 +1,31 @@
+version: 3
+debug: false
+updateCheck: true
+schematicSources:
+  scanPathes: {}
+  excludedPathes:
+  - none
+selectorSettings:
+  pathSeperator: /
+  pathSourceAsPrefix: false
+schematicConfig:
+  ==: sbrSchematicConfig
+  sources:
+  - ==: sbrSchematicSource
+    path: SchematicBrushReborn/schematics
+    prefix: sbr
+    excludedPath: []
+  - ==: sbrSchematicSource
+    path: FastAsyncWorldEdit/schematics
+    prefix: fawe
+    excludedPath: []
+  - ==: sbrSchematicSource
+    path: WorldEdit/schematics
+    prefix: we
+    excludedPath: []
+  pathSeparator: /
+  pathSourceAsPrefix: false
+presets: []
+general:
+  ==: sbrGeneralSettings
+  checkUpdates: true

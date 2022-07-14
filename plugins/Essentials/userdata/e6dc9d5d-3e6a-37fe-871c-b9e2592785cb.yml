@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 95.161.248.59
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1653851703420
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655795793142
+  login: 1655794124854
+money: '0'
+last-account-name: CartochkaTT
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 44.67458354138945
+  y: 24.032563740977416
+  z: 724.7790697398738
+  yaw: -3.6156787872314453
+  pitch: 39.23813247680664
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 387.68914675417
+  y: 44.000635549029525
+  z: -413.80908139301096
+  yaw: 7.144432067871094
+  pitch: 19.780128479003906

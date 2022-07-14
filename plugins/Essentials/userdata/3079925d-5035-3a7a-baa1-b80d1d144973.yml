@@ -1,0 +1,47 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 79.139.222.104
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1654872030855
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655391328574
+  login: 1655363683947
+money: '0'
+last-account-name: _RimuraTempest_
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 421.86360707648066
+  y: 73.9166356965412
+  z: -210.3112372562437
+  yaw: 103.925537109375
+  pitch: 45.749900817871094
+logoutlocation:
+  world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+  world-name: house
+  x: -1068.8059482119904
+  y: 58.36813569728036
+  z: -240.92378602876022
+  yaw: 169.3545379638672
+  pitch: 31.350011825561523
+homes:
+  home:
+    world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+    world-name: house
+    x: -617.8001820428851
+    y: 42.0
+    z: -206.51980502173404
+    yaw: -11.550862312316895
+    pitch: 8.2498140335083

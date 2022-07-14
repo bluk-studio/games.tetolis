@@ -1,0 +1,17 @@
+nested:
+  furniture:
+    testId:
+      # Information
+      name: "Крутое название"
+      description:
+      - "Тестовое описание"
+
+      # Technical
+      modelData: 1
+      dimensions:
+        height: 1
+        width: 2
+
+      # Traits
+      traits:
+      - isSittable

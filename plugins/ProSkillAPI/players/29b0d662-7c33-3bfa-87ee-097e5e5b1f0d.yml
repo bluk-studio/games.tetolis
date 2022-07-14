@@ -1,0 +1,39 @@
+limit: 3
+active: 1
+health: 18.0
+mana: 10.0
+accounts: 
+  acc1: 
+    classes: 
+      Guardsman: 
+        level: 1
+        points: 0
+        exp: 0.0
+    skills: 
+      Shift: 
+        level: 0
+        points: 0
+      Splash: 
+        level: 0
+        points: 0
+      Buff: 
+        level: 1
+        points: 0
+      God Shields: 
+        level: 0
+        points: 0
+    binds:  {}
+    bar: 
+      enabled: 'true'
+      slots:  []
+    combos: 
+      buff: 'L L L L'
+      shift: 'L L L R'
+      god shields: 'L L L LS'
+    attrib-points: 0
+    attribs:  {}
+    hover:  {}
+    instant:  {}
+    hunger: 1.0
+    extra: 
+      combatItems: '9;'

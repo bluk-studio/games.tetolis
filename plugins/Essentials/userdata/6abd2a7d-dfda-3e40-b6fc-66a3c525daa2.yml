@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 95.133.144.10
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1647433088344
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1647606920970
+  login: 1647606833049
+money: '0'
+last-account-name: Letuarchik
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -149.86442621295498
+  y: 5.250051585619721
+  z: -344.6668470903808
+  yaw: -64.35034942626953
+  pitch: 21.450050354003906
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -10.247758701178526
+  y: 0.4285791682257127
+  z: 256.6796706150648
+  yaw: 139.45486450195312
+  pitch: 7.349905490875244

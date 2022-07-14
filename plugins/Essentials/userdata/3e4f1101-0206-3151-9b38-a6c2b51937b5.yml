@@ -1,0 +1,41 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 88.147.152.161
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1653321920663
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1653325991090
+  login: 1653316705219
+money: '0'
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -282.42976055665036
+  y: 7.5
+  z: -54.09974569613143
+  yaw: 85.5498046875
+  pitch: 28.0062313079834
+last-account-name: _WaINd_
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 269.5407938834499
+  y: 34.54199968101244
+  z: -529.5109723695302
+  yaw: 8.9912109375
+  pitch: 0.7059614658355713
+powertools:
+  bamboo:
+  - mm mobs spawn Bear

@@ -1,0 +1,7 @@
+nested:
+  areaId:
+    locations:
+    - -24.5, 44, -207.5 to -20.5, 40, -200.3
+    - -19.5, 44, -200.5 to -16.3, 40, -203.7
+    price: 100
+    rentTime: 1 day

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 212.32.212.153
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1648913690019
+  login: 1648913405256
+money: '0'
+last-account-name: SusMak
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 0.0
+  y: 77.0
+  z: -64.0
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -166.35314981472192
+  y: -4.0
+  z: 250.39972741573382
+  yaw: -33.899749755859375
+  pitch: 0.4777580499649048

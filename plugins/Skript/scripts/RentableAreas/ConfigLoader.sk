@@ -1,0 +1,34 @@
+# LoadArea
+function RentableAreas_loadArea(file: string, path: string):
+  set {_id} to {_path}
+
+  # Getting locations
+  set {_locations::*} to yaml list "%{_path}%.locations" from {_file}
+  loop {_locations::*}:
+    set {_temp::*} to loop-value split at "to"
+    set {_location::1} to location of block at FurnitureShop_getLocationFromString({_temp::1})
+    set {_location::2} to location of block at FurnitureShop_getLocationFromString({_temp::2})
+
+    if {_location::1} and {_location::2} is set:
+      # Creating new bound
+      set {_boundId} to "area-%{_id}%-%random integer between 000 and 999%"
+      create a new bound with id {_boundId} within {_location::1} and {_location::2}
+
+      add {_boundId} to {_bounds::*}
+  
+  if size of {_bounds::*} <= 0:
+    broadcast "&c[RentableArea] &fОшибка загрузки помещения %{_id}% &7(Файл: %{_file}%) &fнеправильно записан список locations"
+    stop
+
+  # Getting other information
+  set {_price} to yaml value "%{_path}%.price" from {_file}
+  set {_price} to {_price} parsed as number ? 100
+
+  set {_rentTime} to yaml value "%{_path}%.rentTime" from {_file}
+  set {_rentTime} to {_rentTime} parsed as timespan ? 1 day
+
+  set {area::%{_id}%::price} to {_price}
+  set {area::%{_id}%::rentTime} to {_rentTime}
+  set {area::%{_id}%::bounds::*} to {_bounds::*}
+
+  add {_id} to {area::loaded::*}

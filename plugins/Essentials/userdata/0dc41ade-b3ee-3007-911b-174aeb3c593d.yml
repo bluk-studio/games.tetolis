@@ -1,0 +1,47 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 85.192.188.217
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1648377274492
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1648389728117
+  login: 1648388658504
+money: '0'
+last-account-name: Shapy_X
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -214.74130694713952
+  y: 11.680678553144114
+  z: 471.61316528789354
+  yaw: -30.27203369140625
+  pitch: 19.280248641967773
+homes:
+  home:
+    world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+    world-name: world
+    x: -239.83660367427746
+    y: 8.0
+    z: 505.5870356724374
+    yaw: 89.67724609375
+    pitch: 19.005868911743164
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -284.0124271760551
+  y: -1.0
+  z: 515.7017120564913
+  yaw: -52.83758544921875
+  pitch: 24.155529022216797

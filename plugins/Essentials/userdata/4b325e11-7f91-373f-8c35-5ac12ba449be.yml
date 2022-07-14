@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 80.91.23.51
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1654178742393
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655368948302
+  login: 1655368888395
+money: '0'
+last-account-name: zolotk0
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 17.957711106335726
+  y: 48.39978531014714
+  z: -393.91722268461933
+  yaw: -118.5660400390625
+  pitch: 25.814149856567383
+logoutlocation:
+  world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+  world-name: house
+  x: -1134.985498696569
+  y: 91.40804175467788
+  z: -213.6757976089112
+  yaw: 96.60308837890625
+  pitch: 50.49276351928711
+nickname: §9Kn§3ig§2ht

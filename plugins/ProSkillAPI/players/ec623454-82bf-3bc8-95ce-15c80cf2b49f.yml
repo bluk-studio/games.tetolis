@@ -1,0 +1,34 @@
+limit: 3
+active: 1
+health: 50.0
+mana: 230.0
+accounts: 
+  acc1: 
+    classes: 
+      Mage: 
+        level: 21
+        points: 14
+        exp: 6.0
+    skills: 
+      Shield: 
+        level: 2
+        points: 0
+      Mana Rocket: 
+        level: 1
+        points: 0
+      Totem: 
+        level: 2
+        points: 0
+      Spider: 
+        level: 2
+        points: 0
+    binds: 
+      GLOWSTONE_DUST: 'Spider'
+    combos:  {}
+    attrib-points: 0
+    attribs: 
+      strength: 11
+      vitality: 9
+    hover:  {}
+    instant:  {}
+    hunger: 1.0

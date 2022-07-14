@@ -1,0 +1,39 @@
+on bound enter:
+  set {_boundId} to event-string
+  
+  if {_boundId} starts with "furniture":
+    # Getting shopid
+    set {_temp::*} to {_boundId} split at "-"
+    set {_shopId} to {_temp::2}
+
+    if {furniture::shop::%{_shopId}%} is not set:
+      stop
+
+    # Looping all holograms and showing them
+    loop {furniture::shop::%{_shopId}%::holograms::*}:
+      reveal hologram loop-value to player 
+
+on bound exit:
+  set {_boundId} to event-string
+
+  # Deleting all holograms
+  if {_boundId} starts with "furniture":
+    # Getting shopid
+    set {_temp::*} to {_boundId} split at "-"
+    set {_shopId} to {_temp::2}
+
+    if {furniture::shop::%{_shopId}%} is not set:
+      stop
+
+    wait 1 tick
+
+    # Checking this shop's bounds
+    set {_bounds::*} to {furniture::shop::%{_shopId}%::bounds::*}
+    loop {_bounds::*}:
+      if player's location is within bound with id loop-value:
+        set {_inShop} to true
+        exit 1 loop
+
+    {_inShop} is not true
+    loop {furniture::shop::%{_shopId}%::holograms::*}:
+      hide hologram loop-value from player

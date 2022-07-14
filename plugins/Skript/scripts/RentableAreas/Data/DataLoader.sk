@@ -1,0 +1,34 @@
+function RentableAreas_Data_prepareFilename(areaId: string) :: string:
+  replace all "." in {_areaId} with "-"
+
+  return {_areaId}
+
+function RentableAreas_loadData():
+  # Looping through all loaded areas and loading their
+  # data files from "/plugins/RentableAreas/data" folder
+  loop {area::loaded::*}:
+    set {_id} to RentableAreas_Data_prepareFilename(loop-value)
+
+    load yaml "/plugins/RentableArea/data/%{_id}%.yaml" as "area-%{_id}%"
+
+function RentableAreas_saveData():
+  # Looping through all loaded configs and saving them
+  loop {area::loaded::*}:
+    set {_id} to RentableAreas_Data_prepareFilename(loop-value)
+
+    if yaml "area-%{_id}%" is loaded:
+      save yaml "area-%{_id}%"
+
+on script load:
+  wait 2 seconds
+  RentableAreas_loadData()
+
+on script unload:
+  RentableAreas_saveData()
+
+every 5 seconds:
+  RentableAreas_saveData()
+
+command test:
+  trigger:
+    RentableAreas_Data_deleteOwner("nested.areaId")

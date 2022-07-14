@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 46.32.66.146
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1653143880800
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1653147013593
+  login: 1653146969029
+money: '0'
+last-account-name: agapathus_2st
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 310.69999998807907
+  y: 27.868598561411893
+  z: 383.94999998807907
+  yaw: -46.5262451171875
+  pitch: 11.17123031616211
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 248.57414329722621
+  y: -21.0
+  z: 388.46482541862764
+  yaw: 171.48703002929688
+  pitch: 16.40391731262207

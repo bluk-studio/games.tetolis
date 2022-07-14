@@ -1,0 +1,47 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 92.124.204.37
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1652275002292
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1652275138569
+  login: 1652274368613
+money: '0'
+last-account-name: Mightythoru
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 474.5400855298885
+  y: 177.61632967527976
+  z: -498.4342815249675
+  yaw: 49.52337646484375
+  pitch: 27.856857299804688
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -233.9501457261808
+  y: 45.4126029990762
+  z: 605.4499411916337
+  yaw: -2.098069906234741
+  pitch: 39.1934814453125
+homes:
+  home:
+    world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+    world-name: world
+    x: -219.11104450231971
+    y: 38.0
+    z: 646.3815071502485
+    yaw: -177.832763671875
+    pitch: 7.138980865478516

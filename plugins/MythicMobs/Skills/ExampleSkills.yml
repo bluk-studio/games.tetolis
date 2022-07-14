@@ -1,0 +1,216 @@
+DefaultSkill:
+  Conditions:
+  - targetwithin 20
+  Skills:
+  - effect:particles{p=reddust;amount=80;hS=1;vS=1;color=#7800BD} @self
+SpaceBall:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - sound{s=block.note_block.bell} @PIR{r=15}
+  - delay 5
+  - sound{s=block.note_block.bell} @PIR{r=15}
+  - delay 5
+  - orbital{onTick=SpaceBall-Tick;onHit=SpaceBall-Hit;interval=1;duration=160;charges=1;r=5}
+SpaceBall-Tick:
+  Skills:
+  - effect:particles{p=reddust;amount=40;speed=0;hS=0.2;vS=0.2;color=#7800BD} @origin
+SpaceBall-Hit:
+  Skills:
+  - potion{type=WITHER;duration=100;lvl=1}
+Jerk:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - leap{velocity=250} @target
+Necromant:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - summon{type=Skeletonhelper;amount=1;radius=4} @PIR{r=20}
+  - summon{type=Skeletonhelpertwo;amount=1;radius=4} @PIR{r=20}
+Prison:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - sound{s=block.note_block.basedrum} @PIR{r=15}
+  - sound{s=block.anvil.place} @PIR{r=15}
+  - effect:particles{p=reddust;amount=40;speed=0;hS=1;vS=1;color=#FF216F} @target
+  - prison{material=PURPLE_STAINED_GLASS;d=120;b=false} @target
+
+
+AdditionalArrow:
+  Cooldown: 20
+  Skills:
+  - shoot{type=ARROW;velocity=5;damage=10} @target
+
+OrkRage:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - potion{type=INCREASE_DAMAGE;duration=60;level=1} @self
+  - potion{type=REGENERATION;duration=80;level=1} @self
+OrkBoost:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - potion{type=SPEED;duration=80;level=2} @self
+OrkFire:
+  Conditions:
+  - targetwithin 15
+  Cooldown: 300
+  Skills:
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+  - delay 11
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+
+shaman-tick:
+  Skills:
+  - effect:particles{p=reddust;amount=20;speed=0;hS=0;vS=0} @origin
+ShamanCast:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - projectile{onTick=shaman-tick;onHit=shaman-damage;v=15;i=1hR=0.3;vR=0.3;mr=20} @target
+shaman-damage:
+  Skills:
+  - damage{amount=6} @target
+  - potion{t=WITHER;duration=60;level=1} @target
+
+ShamanHeal:
+  Skills:
+  - potion{t=REGENERATION;duration=100;level=1} @self
+
+GoblinPoison:
+  Cooldown: 20 
+  Skills:
+  - potion{type=POISON;duration=80;level=2}
+
+HealthPotion:
+  Skills:
+  - potion{type=REGENERATION;duration=60;level=2}
+
+BanditMinigan:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+  - shoot{type=ARROW;velocity=5;damage=5} @target
+
+Invisibility:
+  Conditions:
+  - targetwithin 15
+  Skills:
+  - disguise{d="OCELOT" setInvisible} @self
+  - effect:particles{p=reddust;color=#ff8113;hs=2;vs=1;amount=40;size=2} @self
+  - sound{s=block.note_block.pling} @PIR{r=15}
+  - delay 40
+  - disguise{d="OCELOT"} @self
+Koza:
+  Skills:
+  - potion{type=SPEED;duration=180;level=3} @self
+wolf:
+  Skills:
+  - damage{a=6}
+  - potion{type=SLOW;duration=60;level=1} 
+lixodey-damage:
+  Skills:
+  - damage{amount=2}
+lixodey-tick:
+  Skills:
+  - effect:particles{p=spit;amount=1;speed=0;hS=0.2;vS=0.2} @origin
+Lixodey:
+  Skills:
+  - delay 25
+  - projectile{onTick=lixodey-tick;onHit=lixodey-damage;v=15;i=1hR=0.3;vR=0.3;mr=20}
+Skripisksk:
+  - potion{type=SLOW;duration=60;level=1}
+  - potion{type=WEAKNESS;duration=60;level=1}	
+crystal-tick:
+  - effect:particleline{particle=reddust;amount=20;fromOrigin=true;color=#FC1F0F} @Target
+  - sound{s=minecraft:block.anvil.land;v=0.3} @self
+crystal-damage:
+  - damage{amount=8}
+  - ignite{ticks=100}
+CrystalSkill:
+  Skills:
+  - effect:particleline{particle=reddust;amount=20;fromOrigin=true;color=#DE90FC} @MobsInRadius{t=CrystalMonster;r=18}
+CrystalMonsterSk:
+  Skills:
+  - projectile{onTick=crystal-tick;onHit=crystal-damage;v=8;i=1;hR=1;vR=1} @Target
+  - sound{s=minecraft:block.portal.trigger;v=0.4}
+Summongolemore:
+  Skills:
+  - summon{t=Golemore} @Self ~onDamaged
+  - sound{s=minecraft:block.anvil.land;v=0.3} @self
+  - effect:particles{p=block_crack;amount=10;speed=0;hS=0.2;vS=0.2} @origin
+
+# Реализация как панда стреляет камнем
+
+stone-tick:
+  Skills:
+  - effect:particles{p=block_crack;amount=20;speed=0;hS=0.2;vS=0.2} @origin
+
+PandaStoneAttack:
+  Conditions:
+  - targetwithin 20
+  Skills:
+  - delay 25
+  - stun{d=40;f=true} @Self
+  - projectile{onTick=stone-tick;onHit=stone-panda-damage;v=15;i=1hR=0.3;vR=0.3;mr=20} @target
+stone-panda-damage:
+  Skills:
+  - damage{amount=8} @target
+  - potion{t=SLOW;duration=100;level=1} @target
+
+# Огр стреляет камнем
+
+OgrStoneAttack:
+  Conditions:
+  - targetwithin 20
+  Skills:
+  - delay 25
+  - projectile{onTick=stone-tick;onHit=stone-ogr-damage;v=15;i=1hR=0.3;vR=0.3;mr=20} @target
+
+stone-ogr-damage:
+  Skills:
+  - damage{amount=5} @target
+
+EnergoShield:
+  Conditions:
+  - targetwithin 20
+  Skills:
+  - effect:particlesphere{particle=reddust;color=#4DA2E3;amount=120;radius=3} ~onTimer:20 @self
+  - damage{amount=3} @PIR{r=3} ~onTimer:20
+  - ignite{t=60} @PIR{r=3} ~onTimer:20
+
+SpawnMinibot:
+  Conditions:
+  - targetwithin 20
+  - varinrange{var=world.oldmechcount;value=>=4} cancel
+  Skills:
+  - message{m="&bDebug skill:&r"} @PIR{r=20}
+  - summon{type=Minibot;a=2;r=3} @self
+  - variableadd{var=world.oldmechcount;amount=1}
+  - message{m="&bDebug after:&r"} @PIR{r=20}
+
+TopTwo:
+  Skills:
+  - particlering{particle=block;m=stone;r=5;p=100} @self
+  - damage{amount=9} @PIR{r=7}
+Top:
+  Skills:
+  - skill{s=TopTwo}
+
+Bandit:
+  Cooldown: 15 
+  Skills:
+  - potion{type=REGENERATION;duration=80;level=3} @self
+
+BanditBow:
+  Cooldown: 20 
+  Skills:
+  - potion{type=REGENERATION;duration=80;level=3} @self
+

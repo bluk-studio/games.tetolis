@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 81.27.58.174
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1649614534480
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1649668742669
+  login: 1649667490219
+money: '0'
+last-account-name: Lord_lotus
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 59.514337325120216
+  y: -4.0
+  z: -252.48593003558366
+  yaw: 90.2998046875
+  pitch: 12.477785110473633
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -90.29921603706688
+  y: -4.0625
+  z: -84.85270817451881
+  yaw: -130.3512725830078
+  pitch: 5.399731636047363

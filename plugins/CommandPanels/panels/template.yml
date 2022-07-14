@@ -1,0 +1,28 @@
+# |------------------------------------------------------------------------
+# |                       CommandPanels Template File
+# |                            By RockyHawk v1.1
+# | https://www.spigotmc.org/resources/command-panels-custom-guis.67788/
+# |------------------------------------------------------------------------
+panels:
+  template:
+    perm: admin
+    rows: 6
+    title: '&f쇎'
+    empty: 
+    item:
+      '4':
+        material: COBBLESTONE
+        stack: 1
+        name: '&f&fАА'
+        lore:
+        - '&f&f{name} &e({level}/{max})'
+        - '&f&7Launch a salvo of magical'
+        - '&f&7arrows that rain from above'
+        - '&f&7causing damage and slow'
+        - '&f&7speed.'
+        - '&f'
+        - '&f&3Mana: {attr:mana}'
+        - '&f&3Cooldown: {attr:cooldown}'
+        - '&f'
+        - '&f&2Unlock this'
+        - '&f&2Each point'

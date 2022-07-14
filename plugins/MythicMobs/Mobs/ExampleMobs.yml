@@ -1,0 +1,531 @@
+Goblin:
+  Type: Baby_Zombie
+  Health: 35
+  Damage: 6
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Equipment:
+    stone_sword HAND
+    goblin_chestplate CHEST
+    goblin_head HEAD
+  Drops:
+  - Goblin
+  Skills:
+  - skill{s=GoblinPoison} @target ~onAttack
+
+AbyssKnight:
+  Type: Wither_Skeleton
+  Health: 360
+  Display: '&7Рыцарь пустоты'
+  BossBar:
+    Enabled: true
+    Title: '&7Рыцарь пустоты'
+    Range: 23
+    Color: PURPLE
+    Style: SEGMENTED_12
+  Drops:
+  - AbyssKnight
+  Equipment:
+  - CRYING_OBSIDIAN HEAD
+  - NETHERITE_CHESTPLATE CHEST
+  - NETHERITE_LEGGINGS LEGS
+  - NETHERITE_BOOTS FEET
+  - NETHERITE_SWORD HAND
+  Skills:
+  - skill{s=DefaultSkill} ~onTimer:20
+  - skill{s=SpaceBall} @TargetLocation ~onTimer:240
+  - skill{s=Jerk} ~onTimer:300
+  - skill{s=Prison} @NearestPlayer{r=15} ~onTimer:400
+  - skill{s=Necromant} ~onTimer:1200
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Damage: 9
+
+Skeletonhelpertwo:
+  Type: Skeleton
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Equipment:
+  - STONE_AXE HAND
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+
+Skeletonhelper:
+  Type: Skeleton
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Skills:
+  - remove{delay=600} @self ~onSpawn
+
+Goblin-Bower:
+  Type: Skeleton
+  Health: 35
+  Damage: 6
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Equipment:
+  - bow HAND
+  - goblin_chestplate CHEST
+  - goblin_head HEAD
+  Disguise: BABY_ZOMBIE
+  Drops:
+  - GoblinBower
+  Skills:
+  - skill{s=AdditionalArrow} @target ~onAttack
+
+Ayc:
+  Type: Zombie
+  Display: "&fАйц"
+  Health: 20
+  Damage: 3
+  AITargetSelectors:
+  - clear
+  - players
+  Drops:
+  - Ayc
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+    MovementSpeed: 0.5
+    Silent: true
+  Disguise: OCELOT
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  Skills:
+  - skill{s=Invisibility} @self ~onTimer:200
+
+Koza:
+  Type: Zombie
+  Display: "&fБака"
+  Health: 30
+  Drops:
+  - Koza
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Disguise: GOAT
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  Skills:
+  - skill{s=Koza} @Target ~onTimer:400
+  - leap{velocity=200} @Target ~onTimer:400
+
+Lixodey:
+  Type: Zombie
+  Display: "&fЛиходей"
+  Health: 25
+  Damage: 3
+  Disguise: FOX
+  Drops:
+  - Lixodey
+  Options:
+    MovementSpeed: 0.35
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Skills:
+  - leap{velocity=200} @Target ~onTimer:80
+  - skill{s=Lixodey} @Target ~onTimer:200
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+
+Skripisk:
+  Type: ZOMBIE
+  Display: "&7Скриписк"
+  Health: 20
+  Damage: 2
+  Equipment:
+  - air HAND
+  Drops:
+  - Skripisk
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+    Silent: true
+  Disguise: BAT
+  
+  Skills:
+  - skill{s=Skripisksk} @PIR{r=1} ~onTimer:20 0.25
+
+CrystalMonster:
+  Type: Zombie
+  Display: "&dЛазерный голем"
+  Health: 150
+  Damage: 0
+  Equipment:
+  - amethyst_block HEAD
+  - amethyst_cluster HAND
+  - amethyst_cluster OFFHAND
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    ApplyInvisibility: true
+    PreventSunburn: true
+    PreventOtherDrops: true
+    Silent: true
+  Skills:
+  - stun{d=40;f=true} @Self ~onTimer:20
+  - skill{s=CrystalMonsterSk} ~onTimer:20
+
+Laser_crystal:
+  Type: Baby_Zombie
+  Display: "&dКристалл силы"
+  Health: 80
+  Equipment:
+  - amethyst_block HEAD
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    ApplyInvisibility: true
+    NoAI: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+    Silent: true
+  Skills:
+  - skill{s=CrystalSkill} ~onTimer:30
+  
+Golemore:
+  Type: Baby_Zombie
+  Display: "&7Откловшийся осколок"
+  Health: 10
+  Damage: 1
+  Equipment:
+  - iron_ore HEAD
+  AITargetSelectors:
+  - clear
+  - players
+  Options:
+    ApplyInvisibility: true
+    PreventSunburn: true
+    PreventOtherDrops: true
+    Silent: true
+
+Golem:
+  Type: Skeleton
+  Display: '&7Рудный голем'
+  Health: 60
+  Damage: 3
+  Equipment:
+  - raw_iron_block HEAD
+  - golem_chestplate CHEST
+  - golem_leggings LEGS
+  - golem_boots FEET
+  - air HAND
+  - air OFFHAND
+  Skills:
+  - skill{s=Summongolemore} @self ~onDamaged 0.4
+  - sound{s=minecraft:block.anvil.step;v=2} @self ~onDamaged
+  Drops:
+  - Golem
+  Options:
+    PreventSunburn: true
+    MovementSpeed: 0.16
+    Silent: true
+    PreventOtherDrops: true
+Slimee:
+  Type: Slime
+  Display: '&aСлизень'
+  Health: 20
+  Damage: 4
+  Options:
+    PreventSlimeSplit: true
+    PreventOtherDrops: true
+    Size: 2
+
+Skeleton:
+  Type: SKELETON
+  Display: '&fСкелет'
+  Health: 20
+  Equipment:
+  - STONE_SWORD HAND
+  Damage: 4
+  Drops:
+  - SkeletonDrop
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Skills:
+  - potion{type=HUNGER;duration=400;level=1} @target ~onAttack
+  - potion{type=CONFUSION;duration=400;level=1} @target ~onAttack
+
+Zombie:
+  Type: ZOMBIE
+  Display: '&2Зомби'
+  Health: 30
+  Equipment:
+  - STONE_SWORD HAND
+  Damage: 5
+  Drops:
+  - ZombieDrop
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Skills:
+  - potion{type=HUNGER;duration=400;level=1} @target ~onAttack
+  - potion{type=CONFUSION;duration=400;level=1} @target ~onAttack
+
+ModifiedWolf:
+  Type: WOLF
+  Display: '&cВолчара'
+  Health: 35
+  Damage: 4
+  Drops:
+  - Wolf
+  Skills: 
+  - skill{s=wolf} @Target ~onAttack 0.15
+  Options:
+    Angry: true
+    PreventOtherDrops: true
+  AITargetSelectors:
+  - clear
+  - players
+
+Minibot:
+  Type: Silverfish
+  Display: "&fМинибот"
+  Health: 5
+  Damage: 2
+  Options:
+    PreventOtherDrops: true
+
+OldMech:
+  Type: IRON_GOLEM
+  Display: "&6Древний Механизм"
+  Health: 130
+  Damage: 9 
+  Options:
+    PreventOtherDrops: true
+  AITargetSelectors:
+  - clear
+  - players
+  BossBar:
+    Enabled: true
+    Title: 'Древний Механизм'
+    Range: 23
+    Color: YELLOW
+    Style: SOLID
+  Skills:
+  - skill{s=EnergoShield} <50% ~onTimer:20
+  - skill{s=SpawnMinibot} ~onTimer:300
+  - setvariable{var=world.oldmechcount;type=INTEGER;value="1"}
+  - message{m="&bDebug:&r"} @PIR{r=20} ~onTimer:300
+
+Rygli:
+  Type: PANDA
+  Display: '&cРуглы'
+  Health: 80
+  Damage: 7
+  BossBar:
+    Enabled: true
+    Title: 'Руглы'
+    Range: 23
+    Color: RED
+    Style: SOLID
+  DamageModifiers:
+  - FALL -1
+  Skills: 
+  - skill{s=Top} ~onTimer:400
+  - skill{s=PandaStoneAttack} ~onTimer:300
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+  Drops:
+  - Rygli  
+  AITargetSelectors:
+  - clear
+  - players
+  
+Ogr:
+  Type: HUSK
+  Health: 50
+  Damage: 7
+  Options:
+    PreventOtherDrops: true
+  Skills:
+  - potion{type=POWER;duration=100;level=1} @self ~onTimer:200
+  - skill{s=OgrStoneAttack} ~onTimer:400
+  Drops:
+  - Ogr
+
+Ork:
+  Type: ZOMBIE
+  Display: '&2Орк'
+  Health: 50
+  Damage: 4
+  Equipment:
+  - STONE_AXE HAND
+  - ork_head HEAD
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+  AITargetSelectors:
+  - clear
+  - players
+  Drops:
+  - Ork
+  Skills:
+  - skill{s=OrkRage} ~onTimer:200
+  - skill{s=OrkBoost} ~onTimer:400
+OrkBower:
+  Type: SKELETON
+  Display: '&2Орк-Лучник'
+  Health: 40
+  Damage: 5
+  Options:
+    PreventOtherDrops: true
+  Equipment:
+  - BOW HAND
+  - ork_head HEAD
+  Disguise: ZOMBIE
+  Drops:
+  - OrkBower
+  Skills:
+  - skill{s=OrkFire} ~onAttack
+OrkShaman:
+  Type: ZOMBIE
+  Display: '&2Орк-Шаман'
+  Damage: 4
+  Equipment:
+  - ork_head HEAD
+  - shaman_chest CHEST
+  - shaman_leggings LEGS
+  - BLAZE_ROD HAND
+  Drops:
+  - OrkShaman
+  Options:
+    PreventOtherDrops: true
+    PreventSunburn: true
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - skill{s=ShamanCast} ~onTimer:60
+  - skill{s=ShamanHeal} ~onTimer:400
+
+Bandit:
+  Type: ZOMBIE
+  Display: '&3Бандит'
+  Health: 25
+  Damage: 6
+  Equipment: 
+  - IRON_SWORD HAND
+  - LEATHER_HELMET HEAD
+  - LEATHER_CHESTPLATE CHEST
+  Options:
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    PreventOtherDrops: true
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - skill{s=HealthPotion} ~onTimer:300
+  Disguise: player &3Бандит setSkin bandit.png
+  Drops:
+  - Bandit
+
+BanditBow:
+  Type: PILLAGER
+  Display: '&3Бандит-Лучник'
+  Health: 25
+  Damage: 6
+  Equipment: 
+  - CROSSBOW HAND
+  - LEATHER_HELMET HEAD
+  Options:
+    MovementSpeed: 0.30
+    PreventOtherDrops: true
+  AITargetSelectors:
+  - clear
+  - players
+  Disguise: player &3Бандит-Стрелок setSkin bandit.png
+  Drops:
+  - BanditBow
+  Skills:
+  - skill{s=BanditMinigan} ~onTimer:300
+
+BanditWarvar:
+  Type: SKELETON
+  Display: '&3Бандит-Варвар'
+  Equipment:
+  - IRON_AXE HAND
+  Disguise: player &3Бандит-Варвар setSkin bandit.png
+  Health: 35
+  Options:
+    PreventSunburn: true
+    PreventOtherDrops: true
+  Drops:
+  - BanditWarvar
+  Skills:
+  - skill{s=Jerk} @target ~onTimer:100
+  - skill{s=BattleRoat} @target ~onTimer:500
+
+# Добавить дроп
+  Zylant:
+    Type: PHANTOM
+    Display: '&aЗилант'
+    Health: 35
+    Options:
+      PreventSunburn: true
+      PreventOtherDrops: true
+    Drops:
+    - Zylant
+    SKills:
+    - skill{s=Bombardier} @target ~onTimer:300
+
+OgrTravnik:
+  Type: HUSK
+  Health: 40
+  Damage: 6
+  Options:
+    PreventOtherDrops: true
+  Drops:
+  - OgrTravnik
+
+OgrBoec:
+  Type: HUSK
+  Health: 60
+  Damage: 10
+  Options:
+    PreventOtherDrops: true
+  Drops:
+  - OgrBoec
+
+Hoglin:
+  Type: HOGLIN
+  Health: 40
+  Damage: 6
+  Options:
+    PreventOtherDrops: true
+  Drops:
+  - Hoglin

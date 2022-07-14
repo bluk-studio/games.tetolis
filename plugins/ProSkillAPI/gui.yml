@@ -1,0 +1,90 @@
+ATTRIBUTES: 
+  rows: 1
+  pages: 1
+  slots: 
+    1: 
+      dexterity: 3
+      strength: 4
+      vitality: 0
+      spirit: 1
+      intelligence: 2
+stNinja: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      dart: 16
+      ghost: 12
+      smoke: 10
+      zero trap: 14
+csHunter: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      ninja: 11
+csGuardsman: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      warrior: 11
+stMage: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      shield: 14
+      mana rocket: 10
+      totem: 16
+      spider: 12
+stAlchemist: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      mage boost: 16
+      mage bow: 10
+      fire arrow: 14
+      elemental arrow: 12
+stWarrior: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      bulldoze: 14
+      earthshock: 16
+      doppelganger: 12
+      bash: 10
+CLASS_DETAILS: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      class: 0
+stGuardsman: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      shift: 12
+      splash: 10
+      buff: 14
+      god shields: 16
+stHunter: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      power shot: 16
+      shrapnel: 10
+      trap: 14
+      speed boost: 12
+CLASS_SELECTION: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      mage: 15
+      guardsman: 13
+      hunter: 11

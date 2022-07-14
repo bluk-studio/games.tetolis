@@ -1,0 +1,39 @@
+on bound enter:
+  set {_boundId} to event-string
+
+  if {_boundId} starts with "area":
+    # Getting area id
+    set {_temp::*} to {_boundId} split at "-"
+    set {_areaId} to {_temp::2}
+
+    # Updating player info
+    set {area::%player%::currentlyInArea} to {_areaId}
+
+    # Checking if we need to send notification
+    {area::%player%::boundNotification::%{_areaId}%} is set:
+      if {area::%player%::boundNotification::%{_areaId}%} > unix timestamp of now:
+        stop
+
+    # Getting area owner
+    set {_owner} to RentableAreas_Data_getOwner({_areaId})
+    if {_owner} is player:
+      # You are an owner notification
+      RentableAreas_sendNotification(player, diamond, "Нажмите &e[F] &fчто бы перейти в настройки помещения.")
+    else:
+      if {_owner} is set:
+        # Can not buy notification
+        RentableAreas_sendNotification(player, iron ingot, "Это помещение уже кем-то арендовано.")
+      else:
+        # Can buy notification
+        RentableAreas_sendNotification(player, gold ingot, "Нажмите &e[F] &fчто бы арендовать помещение.")
+
+    set {_timer} to unix timestamp of now
+    add 10 to {_timer}
+
+    set {area::%player%::boundNotification::%{_areaId}%} to {_timer}
+
+on bound exit:
+  set {_boundId} to event-string
+
+  if {_boundId} starts with "area":
+    delete {area::%player%::currentlyInArea}

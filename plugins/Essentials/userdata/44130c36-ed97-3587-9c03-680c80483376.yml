@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 192.162.114.249
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1649005967755
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1649006153969
+  login: 1648999698732
+money: '0'
+last-account-name: FreshJuice_
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -280.7603628818886
+  y: -1.0
+  z: 500.1874316583939
+  yaw: 157.208984375
+  pitch: 4.886131763458252
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -280.282075921888
+  y: -4.795065971763267
+  z: 470.1999191872246
+  yaw: -1.7481689453125
+  pitch: 20.991451263427734

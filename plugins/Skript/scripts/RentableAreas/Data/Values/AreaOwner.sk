@@ -1,0 +1,19 @@
+function RentableAreas_Data_getOwner(areaId: string) :: player:
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    # Getting owner
+    set {_owner} to yaml value "owner" from "area-%{_id}%"
+
+    {_owner} is set:
+      set {_owner} to "%{_owner}%" parsed as offline player
+      return {_owner}
+
+function RentableAreas_Data_setOwner(areaId: string, owner: player):
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    set yaml value "owner" from "area-%{_id}%" to "%{_owner}%"
+
+function RentableAreas_Data_deleteOwner(areaId: string):
+  set {_id} to RentableAreas_Data_prepareFilename({_areaId})
+  if yaml "area-%{_id}%" is loaded:
+    delete yaml value "owner" from "area-%{_id}%"

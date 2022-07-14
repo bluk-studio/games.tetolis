@@ -1,0 +1,58 @@
+# Customize this file to change all shop items inside the main shop screen
+# For more info about this file, please visit our wiki here: https://gpplugins.gitbook.io/economyshopgui/file-configuration/sections.yml
+
+ShopSections:
+
+  Dyes:
+    enable: true
+    material: CYAN_DYE
+    displayname: '&2&lDyes'
+    place: 23
+
+  Potions:
+    enable: true
+    material: POTION
+    displayname: '&d&lPotions + Tipped Arrows'
+    potion-glow: true
+    place: 40
+
+  Redstone:
+    enable: true
+    material: REDSTONE
+    displayname: '&c&lRedstone'
+    place: 32
+    lore:
+    - '&4&lFor all redstone geeks!'
+
+  Spawners:
+    enable: true
+    material: SPAWNER
+    displayname: '&8&lSpawners'
+    place: 31
+
+  Workstations:
+    enable: true
+    material: GRINDSTONE
+    displayname: '&7&lWorkstations'
+    place: 12
+    lore:
+    - '&8&lGive your villager a job,'
+    - '&8&lor use it for your own.'
+
+  SpawnEggs:
+    enable: false
+    material: BAT_SPAWN_EGG
+    displayname: '&8&lSpawnEggs'
+    place: 4
+
+  Z_EverythingElse:
+    enable: false
+    material: BEDROCK
+    displayname: Z_EverythingElse
+    place: 41
+
+Fill-item:
+  material: GRAY_STAINED_GLASS_PANE
+# displayname: "&8Nothing here"
+  #Disable this item by setting this value to false
+  enable: true

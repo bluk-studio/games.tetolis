@@ -1,0 +1,69 @@
+options:
+  # 
+  inventory_prefix: 
+
+  button_extend_rent_slots: 10,11,12, 19,20,21
+
+function RentableArea_AreaManagerMenu_open(player: player):
+  open chest inventory with 6 rows named "&f{@inventory_prefix}" to {_player}
+
+  # Starting worker
+  set {_timer} to 0
+  while true is true:
+    if {_player} is offline:
+      stop
+
+    # Checking inventory name
+    if name of {_player}'s current inventory doesn't contain "{@inventory_prefix}":
+      stop
+
+    # Timer to (re)populate inventory
+    reduce {_timer} by 0.05
+    if {_timer} <= 0:
+      set {_timer} to 1
+
+      # Updating menu
+      RentableArea_AreaManagerMenu_populateMenu({_player})
+    
+    wait 1 tick
+
+function RentableArea_AreaManagerMenu_populateMenu(player: player):
+  # Getting areaId
+  set {_areaId} to {area::%{_player}%::currentlyInArea}
+
+  # Getting area information
+  set {_rentTo} to RentableAreas_Data_getRentTo({_areaId})
+  
+  # Extend rent time
+  set {_slots::*} to {@button_extend_rent_slots}
+  set {_item} to paper named "Продлить аренду" with nbt "{}"
+
+  set slot {_slots::*} of {_player}'s inventory to {_item}
+
+  # Updating player's inventory name
+
+function RentableArea_AreaManagerMenu_callButtonAction(player: player, buttonId: string):
+  broadcast "buttonId: %{_buttonId}%"
+
+on inventory click:
+  if name of player's current inventory contians "{@inventory_prefix}":
+    cancel event
+
+    # Buttons
+    set {_buttons::*} to "extend={@button_extend_rent_slots}"
+    loop {_buttons::*}:
+      delete {_slots::*}
+      set {_temp::*} to loop-value split at "="
+      
+      set {_buttonId} to {_temp::1}
+      set {_slots::unprepared::*} to {_temp::2} split at ","
+      loop {_slots::unprepared::*}:
+        set {_number} to loop-value-2
+        replace all " " in {_number} with ""
+        add "%{_number}%" parsed as number to {_slots::*}
+
+      if {_slots::*} contains index of clicked slot:
+        # Calling button action
+        RentableArea_AreaManagerMenu_callButtonAction(player, {_buttonId})
+
+        stop

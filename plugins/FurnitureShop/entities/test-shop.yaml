@@ -1,0 +1,20 @@
+nested:
+  shopId:
+    locations:
+    - 0.5, 44, -207.5 to -4, 40, -200.5
+    - 1, 40, -200.5 to 4.5, 44, -203.5
+    items:
+      nested:
+        nestedEvenFurhter:
+          evenFurther:
+            fuckYourself:
+              yeahId:
+                itemId: nested.furniture.testId
+                price: 120
+                entity:
+                  location: -0, 40, -204.5
+                  rotationX: 0
+                  rotationY: 100
+                  rotationZ: 0
+                  
+                hologramLocation: -0.5, 41.5, -204.6

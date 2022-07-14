@@ -1,0 +1,288 @@
+worth-calculator:
+  by-item-stats:
+    AOE_DAMAGE: 3
+    PVP_DAMAGE: 6
+    PVE_DAMAGE: 7
+    DODGE_RATE: 5
+    ACCURACY_RATE: 5
+    BLOCK_RATE: 9
+    BLOCK_DAMAGE: 8
+    LOOT_RATE: 7
+    BURN_RATE: 2
+    PVP_DEFENSE: 6
+    PVE_DEFENSE: 6
+    CRITICAL_RATE: 4
+    CRITICAL_DAMAGE: 8
+    DURABILITY: 11
+    MOVEMENT_SPEED: 9
+    PENETRATION: 11
+    ATTACK_SPEED: 11
+    VAMPIRISM: 2
+    MAX_HEALTH: 9
+    BLEED_RATE: 9
+    DISARM_RATE: 1
+    SALE_PRICE: 7
+    THORNMAIL: 9
+    HEALTH_REGEN: 7
+    MANA_REGEN: 6
+  by-damage-types:
+    _vanilla_generic: 7
+    magical: 5
+    fire: 7
+    poison: 9
+    water: 10
+    wind: 8
+    physical: 8
+    elemental: 8
+    light: 7
+    dark: 5
+  by-defense-types:
+    physical: 5
+    magical: 4
+    fire: 8
+    poison: 7
+    water: 4
+    wind: 5
+    elemental: 7
+    light: 5
+    dark: 3
+  by-socket-types:
+    GEM:
+      common: 131
+      rare: 141
+    RUNE:
+      default: 115
+    ESSENCE:
+      default: 105
+  by-enchant-level:
+    fire_protection:
+      '1': 45
+      '2': 88
+      '3': 108
+    sharpness:
+      '1': 34
+      '2': 106
+      '3': 138
+      '4': 172
+    soul_speed:
+      '1': 34
+      '2': 94
+    punch:
+      '1': 31
+    loyalty:
+      '1': 37
+      '2': 76
+    depth_strider:
+      '1': 54
+      '2': 62
+    unbreaking:
+      '1': 33
+      '2': 68
+    knockback:
+      '1': 60
+    luck_of_the_sea:
+      '1': 30
+      '2': 60
+    fortune:
+      '1': 34
+      '2': 118
+    protection:
+      '1': 57
+      '2': 76
+      '3': 102
+    efficiency:
+      '1': 53
+      '2': 78
+      '3': 123
+      '4': 236
+    frost_walker:
+      '1': 33
+    lure:
+      '1': 32
+      '2': 114
+    looting:
+      '1': 49
+      '2': 66
+    piercing:
+      '1': 41
+      '2': 102
+      '3': 132
+    blast_protection:
+      '1': 43
+      '2': 82
+      '3': 144
+    smite:
+      '1': 57
+      '2': 64
+      '3': 132
+      '4': 192
+    fire_aspect:
+      '1': 49
+    sweeping:
+      '1': 41
+      '2': 76
+    thorns:
+      '1': 39
+      '2': 114
+    bane_of_arthropods:
+      '1': 49
+      '2': 108
+      '3': 102
+      '4': 144
+    respiration:
+      '1': 45
+      '2': 74
+    riptide:
+      '1': 51
+      '2': 64
+    quick_charge:
+      '1': 30
+      '2': 102
+    projectile_protection:
+      '1': 39
+      '2': 92
+      '3': 129
+    impaling:
+      '1': 48
+      '2': 78
+      '3': 105
+      '4': 140
+    feather_falling:
+      '1': 38
+      '2': 82
+      '3': 138
+    power:
+      '1': 52
+      '2': 110
+      '3': 162
+      '4': 140
+  by-item-id-level:
+    gems:
+      diamond_of_damage:
+        '1': 174
+      emerald_of_health:
+        '1': 169
+      gold_nugget_of_agility:
+        '1': 192
+      iron_nugget_of_defense:
+        '1': 200
+    essences:
+      light_trail:
+        '1': 183
+      magic_helix:
+        '1': 196
+    runes:
+      rune_absorp:
+        '1': 171
+      rune_jump:
+        '1': 100
+      rune_luck:
+        '1': 119
+      rune_resist:
+        '1': 125
+      rune_speed:
+        '1': 181
+      rune_strength:
+        '1': 185
+    arrows:
+      arrow_explosive:
+        '1': 172
+      arrow_flame:
+        '1': 126
+      arrow_pierce:
+        '1': 183
+      snowball_explosive:
+        '1': 182
+    item_generator:
+      common:
+        '1': 181
+      rare:
+        '1': 125
+      gold:
+        '1': 149
+      huntercommon:
+        '1': 151
+      guardsmancommon:
+        '1': 180
+      bow:
+        '1': 139
+      axe_tier_1:
+        '1': 109
+      bow_tier_1:
+        '1': 114
+      crossbow_tier_1:
+        '1': 118
+      guard_armor_tier_1:
+        '1': 130
+      hunter_armor_tier_1:
+        '1': 126
+      shield_tier_1:
+        '1': 104
+      sword_tier_1:
+        '1': 131
+      spear:
+        '1': 107
+      sword_tier_2:
+        '1': 133
+      sword_tier_3:
+        '1': 186
+      sword_tier_4:
+        '1': 104
+      sword_tier_5:
+        '1': 174
+    custom_items:
+      basic:
+        '1': 186
+    refine:
+      sample_stone:
+        '1': 108
+    fortify:
+      stone_essence:
+        '1': 165
+      stone_gem:
+        '1': 195
+      stone_refine:
+        '1': 183
+      stone_rune:
+        '1': 187
+    identify:
+      tome-rare:
+        '1': 140
+      item-common:
+        '1': 178
+      tome-common:
+        '1': 196
+    magic_dust:
+      essence_dust:
+        '1': 134
+      gemic_dust:
+        '1': 140
+      red_dust:
+        '1': 132
+      runic_dust:
+        '1': 139
+      universal_dust:
+        '1': 181
+    repair:
+      sample_tool:
+        '1': 184
+    dismantle:
+      tool_armor:
+        '1': 119
+      tool_weapon:
+        '1': 102
+    extractor:
+      tool_armor:
+        '1': 195
+      tool_wpn:
+        '1': 180
+    consumables:
+      burger:
+        '1': 101
+      small_health_potion:
+        '1': 122
+      small_loot_potion:
+        '1': 143
+    money:
+      money:
+        '1': 158

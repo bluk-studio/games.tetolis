@@ -1,0 +1,61 @@
+Mage Boost: 
+  name: 'Mage Boost'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2Damage Buff: {attr:buff.value}'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '5'
+            seconds-scale: '0'
+          children: 
+            Buff-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'buff'
+                counts: 'True'
+                immediate: 'False'
+                type: 'SKILL_DAMAGE'
+                modifier: 'Flat'
+                category: ''
+                value-base: '1'
+                value-scale: '1'
+                seconds-base: '5.5'
+                seconds-scale: '0'
+              children:  {}

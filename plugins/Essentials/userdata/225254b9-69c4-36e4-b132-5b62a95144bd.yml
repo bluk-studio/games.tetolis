@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 78.106.97.159
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1648910303397
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1648910415921
+  login: 1648903468147
+money: '0'
+last-account-name: Molecularium
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -121.85411862752345
+  y: -23.77174015938963
+  z: -305.86323645752304
+  yaw: 159.52825927734375
+  pitch: 66.97650909423828
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -104.44672004384229
+  y: -1.244467774140949
+  z: -301.7569143968327
+  yaw: 135.86915588378906
+  pitch: 9.230278015136719

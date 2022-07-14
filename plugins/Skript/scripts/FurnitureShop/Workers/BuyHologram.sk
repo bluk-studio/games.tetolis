@@ -1,0 +1,27 @@
+function FurnitureShop_spawnBuyHologram(shopId: string, shopItemId: string):
+  # Getting hologram location
+  set {_location} to {furniture::shop::%{_shopId}%::item::%{_shopItemId}%::hologramLocation}
+  if {_location} is not set:
+    stop
+
+  # Checking if we already have this hologram
+  set {_hologram} to {furniture::shop::%{_shopId}%::hologram::%{_location}%}
+
+  if {_hologram} is not set:
+    set {_create} to true
+  if hologram {_hologram} is deleted:
+    set {_create} to true
+
+  if {_create} is true:
+    create new hologram with line FurnitureShop_BuyItemHologram_getText({_shopId}, {_shopItemId}) at {_location} and store it in {_hologram}
+
+    make hologram {_hologram} hidden by default
+
+    set {furniture::shop::%{_shopId}%::hologram::%{_location}%} to {_hologram}
+
+  if {furniture::shop::%{_shopId}%::holograms::*} doesn't contain {_hologram}:
+    add {_hologram} to {furniture::shop::%{_shopId}%::holograms::*}
+
+command delholo:
+  trigger:
+    delete all holograms

@@ -1,0 +1,3801 @@
+loaded: 'true'
+Bash: 
+  name: 'Bash'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '20'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 25
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2На 5 уровне эффекты на 1'
+  - '&2сек дольше'
+  - ''
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'True'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '999'
+      children: 
+        Tool-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            material: 'Any'
+            tool: 'Any'
+          children: 
+            Linear-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                range-base: '3'
+                range-scale: '0'
+                tolerance-base: '1.5'
+                tolerance-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+              children: 
+                Skill Level-d: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'Bash'
+                    min-level: '5'
+                    max-level: '6'
+                  children: 
+                    Potion-e: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Slow'
+                        ambient: 'True'
+                        tier-base: '5'
+                        tier-scale: '0'
+                        seconds-base: '3'
+                        seconds-scale: '0'
+                      children:  {}
+                    Potion-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Blindness'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '2'
+                        seconds-scale: '0'
+                      children:  {}
+                Potion-g: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Slow'
+                    ambient: 'True'
+                    tier-base: '5'
+                    tier-scale: '0'
+                    seconds-base: '2'
+                    seconds-scale: '0'
+                  children:  {}
+                Potion-h: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Blindness'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '2'
+                    seconds-scale: '0'
+                  children:  {}
+Buff: 
+  name: 'Buff'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '25'
+    cooldown-scale: '-1'
+    mana-base: '10'
+    mana-scale: '1'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 6
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Potion-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: 'potion'
+            counts: 'True'
+            potion: 'Regeneration'
+            ambient: 'True'
+            tier-base: '1'
+            tier-scale: '0'
+            seconds-base: '10'
+            seconds-scale: '2'
+          children:  {}
+        Potion-c: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            potion: 'Damage resistance'
+            ambient: 'True'
+            tier-base: '1'
+            tier-scale: '0'
+            seconds-base: '10'
+            seconds-scale: '2'
+          children:  {}
+        Particle Animation-d: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '2'
+            frequency: '0.05'
+            angle: '720'
+            start: '0'
+            duration-base: '1'
+            duration-scale: '0'
+            h-translation-base: '1.5'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Redstone'
+            dust-color: '#ff3333'
+            dust-size: '1'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '0'
+            radius-scale: '0'
+            particles-base: '2'
+            particles-scale: '0'
+            visible-radius: '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '0'
+            speed: '1'
+            forward: '0'
+            upward: '0.2'
+            right: '0'
+          children:  {}
+Bulldoze: 
+  name: 'Bulldoze'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '25'
+    cooldown-scale: '-1'
+    mana-base: '10'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 26
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Value: {attr:damage.value}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            relative: 'Caster'
+            forward-base: '2'
+            forward-scale: '0'
+            upward-base: '0'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+          children:  {}
+        Particle Animation-c: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '1'
+            frequency: '0.05'
+            angle: '0'
+            start: '0'
+            duration-base: '0.4'
+            duration-scale: '0'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Block crack'
+            material: 'Dirt'
+            arrangement: 'Sphere'
+            radius-base: '0.5'
+            radius-scale: '0'
+            particles-base: '5'
+            particles-scale: '0'
+            visible-radius: '25'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.1'
+            forward: '0'
+            upward: '1.3'
+            right: '0'
+            -with-rotation: 'False'
+          children:  {}
+        Sound-d: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            sound: 'Entity zombie break wooden door'
+            volume-base: '100'
+            volume-scale: '0'
+            pitch-base: '1.2'
+            pitch-scale: '0'
+          children:  {}
+        Repeat-e: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            repetitions-base: '5'
+            repetitions-scale: '0'
+            period: '0.1'
+            delay: '0'
+            stop-on-fail: 'False'
+          children: 
+            Area-f: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                radius-base: '1.6'
+                radius-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+                random: 'False'
+              children: 
+                Damage-g: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '5'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Push-h: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Fixed'
+                    speed-base: '0.5'
+                    speed-scale: '0'
+                    source: 'none'
+                  children:  {}
+                Potion-i: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Weakness'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '5'
+                    seconds-scale: '1'
+                  children:  {}
+Dart: 
+  name: 'Dart'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '12'
+    cooldown-scale: '1'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 15
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '1'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                repetitions-base: '3'
+                repetitions-scale: '0'
+                period: '0.55'
+                delay: '0'
+                stop-on-fail: 'False'
+              children: 
+                Inventory-d: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    amount-base: '1'
+                    amount-scale: '0'
+                    check-mat: 'True'
+                    material: 'Arrow'
+                    check-data: 'False'
+                    check-lore: 'False'
+                    check-name: 'False'
+                    regex: 'False'
+                  children: 
+                    Projectile-e: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        projectile: 'Arrow'
+                        flaming: 'False'
+                        cost: 'All'
+                        velocity-base: '3'
+                        velocity-scale: '0'
+                        lifespan-base: '10'
+                        lifespan-scale: '0'
+                        spread: 'Cone'
+                        amount-base: '1'
+                        amount-scale: '0'
+                        angle-base: '30'
+                        angle-scale: '0'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        upward-base: '0'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                        use-effect: 'False'
+                      children: 
+                        Potion-f: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'potion'
+                            counts: 'True'
+                            potion: 'Slow'
+                            ambient: 'True'
+                            tier-base: '3'
+                            tier-scale: '0'
+                            seconds-base: '2'
+                            seconds-scale: '1'
+                          children:  {}
+                        Damage-g: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '4'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                        Particle-h: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            particle: 'Spell mob'
+                            arrangement: 'Circle'
+                            direction: 'XZ'
+                            radius-base: '0'
+                            radius-scale: '0'
+                            particles-base: '5'
+                            particles-scale: '0'
+                            visible-radius: '25'
+                            dx: '0.2'
+                            dy: '0.5'
+                            dz: '0.2'
+                            amount: '0'
+                            speed: '1'
+                            forward: '0'
+                            upward: '0'
+                            right: '0'
+                          children:  {}
+                    Particle-i: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Smoke normal'
+                        arrangement: 'Circle'
+                        direction: 'XZ'
+                        radius-base: '0'
+                        radius-scale: '0'
+                        particles-base: '1'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '1'
+                        speed: '0.05'
+                        forward: '0.3'
+                        upward: '1.5'
+                        right: '0'
+                      children:  {}
+                Else-j: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Cancel-k: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                      children:  {}
+        Else-l: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-m: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь хотя бы 1 стрелу!'
+              children:  {}
+Doppelganger: 
+  name: 'Doppelganger'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '35'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 28
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Radius: {attr:area.radius}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: 'area'
+            radius-base: '4'
+            radius-scale: '1'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            random: 'False'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                type: 'Fixed'
+                speed-base: '-0.5'
+                speed-scale: '-0.5'
+                source: 'none'
+              children:  {}
+            Particle Animation-d: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                steps: '1'
+                frequency: '0.05'
+                angle: '0'
+                start: '0'
+                duration-base: '0.4'
+                duration-scale: '0'
+                h-translation-base: '0'
+                h-translation-scale: '0'
+                v-translation-base: '0'
+                v-translation-scale: '0'
+                h-cycles: '1'
+                v-cycles: '1'
+                particle: 'Cloud'
+                arrangement: 'Sphere'
+                radius-base: '0.15'
+                radius-scale: '0'
+                particles-base: '1'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.05'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+                -with-rotation: 'False'
+              children:  {}
+EarthShock: 
+  name: 'EarthShock'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '45'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 27
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Particle Projectile-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            gravity: '0'
+            pierce: 'True'
+            group: 'Enemy'
+            velocity-base: '1'
+            velocity-scale: '0'
+            lifespan-base: '2'
+            lifespan-scale: '0'
+            spread: 'Cone'
+            amount-base: '1'
+            amount-scale: '0'
+            angle-base: '15'
+            angle-scale: '0'
+            forward-base: '0'
+            forward-scale: '0'
+            upward-base: '0.3'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+            particle: 'Block crack'
+            material: 'Dirt'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '3'
+            radius-scale: '0'
+            particles-base: '5'
+            particles-scale: '0'
+            visible-radius: '25'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '5'
+            speed: '0.1'
+            frequency: '0.05'
+            use-effect: 'False'
+          children: 
+            Area-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                radius-base: '3.5'
+                radius-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+                random: 'False'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '10'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Push-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Fixed'
+                    speed-base: '1'
+                    speed-scale: '1'
+                    source: 'none'
+                  children:  {}
+                Potion-f: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Absorption'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+Elemental Arrow: 
+  name: 'Elemental Arrow'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '25'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '10'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 19
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '1'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Projectile-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                projectile: 'Arrow'
+                flaming: 'True'
+                cost: ''
+                velocity-base: '3'
+                velocity-scale: '0'
+                lifespan-base: '5'
+                lifespan-scale: '0'
+                spread: 'Cone'
+                amount-base: '1'
+                amount-scale: '0'
+                angle-base: '5'
+                angle-scale: '0'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                use-effect: 'True'
+                effect-key: 'default'
+                duration-base: '1'
+                duration-scale: '0'
+                -shape: 'hexagon'
+                -shape-dir: 'XY'
+                -shape-size: '1'
+                -animation: 'one-circle'
+                -anim-dir: 'XZ'
+                -anim-size: '1'
+                -interval: '1'
+                -view-range: '25'
+                -particle-type: 'Flame'
+                -particle-material: 'Dirt'
+                -particle-durability: '0'
+                -particle-data: '0'
+                -particle-amount: '1'
+                -particle-dx: '0'
+                -particle-dy: '0'
+                -particle-dz: '0'
+                -particle-speed: '0.1'
+                -initial-rotation: '0'
+                -with-rotation: 'True'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'damage'
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '2'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Item Remove-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    amount-base: '1'
+                    amount-scale: '0'
+                    check-mat: 'True'
+                    material: 'Arrow'
+                    check-data: 'False'
+                    check-lore: 'False'
+                    check-name: 'False'
+                    regex: 'False'
+                  children:  {}
+        Else-f: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-g: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь 1 стрелы!'
+              children:  {}
+Fire Arrow: 
+  name: 'Fire Arrow'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 18
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '1'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Projectile-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                projectile: 'Arrow'
+                flaming: 'True'
+                cost: ''
+                velocity-base: '3'
+                velocity-scale: '0'
+                lifespan-base: '5'
+                lifespan-scale: '0'
+                spread: 'Cone'
+                amount-base: '3'
+                amount-scale: '0'
+                angle-base: '5'
+                angle-scale: '0'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                use-effect: 'True'
+                effect-key: 'default'
+                duration-base: '1'
+                duration-scale: '0'
+                -shape: 'hexagon'
+                -shape-dir: 'XY'
+                -shape-size: '1'
+                -animation: 'one-circle'
+                -anim-dir: 'XZ'
+                -anim-size: '1'
+                -interval: '1'
+                -view-range: '25'
+                -particle-type: 'Flame'
+                -particle-material: 'Dirt'
+                -particle-durability: '0'
+                -particle-data: '0'
+                -particle-amount: '1'
+                -particle-dx: '0'
+                -particle-dy: '0'
+                -particle-dz: '0'
+                -particle-speed: '0.1'
+                -initial-rotation: '0'
+                -with-rotation: 'True'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'damage'
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '2'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Item Remove-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    amount-base: '1'
+                    amount-scale: '0'
+                    check-mat: 'True'
+                    material: 'Arrow'
+                    check-data: 'False'
+                    check-lore: 'False'
+                    check-name: 'False'
+                    regex: 'False'
+                  children:  {}
+                Fire-f: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    damage-base: '1'
+                    damage-scale: '0'
+                    seconds-base: '7'
+                    seconds-scale: '1'
+                  children:  {}
+        Else-g: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-h: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь 1 стрелы!'
+              children:  {}
+Ghost: 
+  name: 'Ghost'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 14
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2На 3 уровне даёт регенерацию'
+  - '&2На 6 уровне даёт Скорость II'
+  - ''
+  - '&2Сбрасывает эффекты на 15'
+  - '&2секунд при вступлении в бой'
+  - '&2Cooldown: &615'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '1'
+            seconds-scale: '0'
+          children: 
+            Combat-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                combat: 'False'
+                seconds: '15'
+              children: 
+                Potion-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Invisibility'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '1.5'
+                    seconds-scale: '0'
+                  children:  {}
+                Skill Level-e: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'Ghost'
+                    min-level: '6'
+                    max-level: '6'
+                  children: 
+                    Potion-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Speed'
+                        ambient: 'True'
+                        tier-base: '2'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}
+                Else-g: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Potion-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Speed'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}
+                Skill Level-i: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'undefined'
+                    min-level: '2'
+                    max-level: '99'
+                  children: 
+                    Potion-j: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Regeneration'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}
+God Shields: 
+  name: 'God Shields'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '40'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 8
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2На 5 уровне добавляется Сопротивление'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Skill Level-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            skill: 'God Shields'
+            min-level: '5'
+            max-level: '99'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                potion: 'Damage resistance'
+                ambient: 'True'
+                tier-base: '1'
+                tier-scale: '0'
+                seconds-base: '10'
+                seconds-scale: '1'
+              children:  {}
+        Particle Animation-d: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '1'
+            frequency: '0.05'
+            angle: '1440'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '0'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Enchantment table'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '0'
+            radius-scale: '0'
+            particles-base: '1'
+            particles-scale: '0'
+            visible-radius: '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0'
+            forward: '1.2'
+            upward: '1'
+            right: '0'
+          children:  {}
+        Particle Animation-e: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '1'
+            frequency: '0.05'
+            angle: '1440'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '0'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Enchantment table'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '0'
+            radius-scale: '0'
+            particles-base: '1'
+            particles-scale: '0'
+            visible-radius: '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0'
+            forward: '1.2'
+            upward: '1.5'
+            right: '0'
+          children:  {}
+        Particle Animation-f: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '1'
+            frequency: '0.05'
+            angle: '1440'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '0'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Enchantment table'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '0'
+            radius-scale: '0'
+            particles-base: '1'
+            particles-scale: '0'
+            visible-radius: '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0'
+            forward: '1.2'
+            upward: '0.5'
+            right: '0'
+          children:  {}
+        Particle Animation-g: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '1'
+            frequency: '0.05'
+            angle: '0'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '0'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Redstone'
+            dust-color: '#ffff66'
+            dust-size: '1'
+            arrangement: 'Sphere'
+            radius-base: '1.15'
+            radius-scale: '0'
+            particles-base: '2'
+            particles-scale: '0'
+            visible-radius: '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '0'
+            speed: '1'
+            forward: '0'
+            upward: '1'
+            right: '0'
+          children:  {}
+        Immunity-h: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            type: 'Projectile'
+            seconds-base: '10'
+            seconds-scale: '0'
+            multiplier-base: '0'
+            multiplier-scale: '0'
+          children:  {}
+        Buff-i: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            immediate: 'False'
+            type: 'SKILL_DEFENSE'
+            modifier: 'Multiplier'
+            category: ''
+            value-base: '0.5'
+            value-scale: '0'
+            seconds-base: '10'
+            seconds-scale: '0'
+          children:  {}
+Mage Boost: 
+  name: 'Mage Boost'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2Damage Buff: {attr:buff.value}'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '5'
+            seconds-scale: '0'
+          children: 
+            Buff-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'buff'
+                counts: 'True'
+                immediate: 'False'
+                type: 'SKILL_DAMAGE'
+                modifier: 'Flat'
+                category: ''
+                value-base: '1'
+                value-scale: '1'
+                seconds-base: '5.5'
+                seconds-scale: '0'
+              children:  {}
+Mage Bow: 
+  name: 'Mage Bow'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '25'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 17
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '2'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Particle Projectile-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                gravity: '0'
+                pierce: 'False'
+                group: 'Enemy'
+                velocity-base: '3'
+                velocity-scale: '0'
+                lifespan-base: '0.4'
+                lifespan-scale: '0'
+                spread: 'Cone'
+                amount-base: '1'
+                amount-scale: '0'
+                angle-base: '30'
+                angle-scale: '0'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '1.2'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                particle: 'Redstone'
+                dust-color: '#1289c9'
+                dust-size: '1.5'
+                arrangement: 'Sphere'
+                radius-base: '0.5'
+                radius-scale: '0'
+                particles-base: '5'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                frequency: '0.05'
+                use-effect: 'False'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'damage'
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '7'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Particle-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Smoke normal'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '0.3'
+                    radius-scale: '0'
+                    particles-base: '20'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '0.05'
+                    forward: '0'
+                    upward: '1'
+                    right: '0'
+                  children:  {}
+        Else-f: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-g: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь 2 стрелы!'
+              children:  {}
+Mana Rocket: 
+  name: 'Mana Rocket'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '3'
+    cooldown-scale: '0'
+    mana-base: '5'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 9
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - ' &2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Offset-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            forward-base: '0'
+            forward-scale: '0'
+            upward-base: '1'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Particle Projectile-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                gravity: '0'
+                pierce: 'False'
+                group: 'Enemy'
+                velocity-base: '2'
+                velocity-scale: '0'
+                lifespan-base: '0.45'
+                lifespan-scale: '0'
+                spread: 'Cone'
+                amount-base: '1'
+                amount-scale: '0'
+                angle-base: '30'
+                angle-scale: '0'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                particle: 'Redstone'
+                dust-color: '#8080ff'
+                dust-size: '1'
+                arrangement: 'Sphere'
+                radius-base: '0'
+                radius-scale: '0'
+                particles-base: '0'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '0'
+                speed: '0.1'
+                frequency: '0.05'
+                use-effect: 'True'
+                effect-key: 'default'
+                duration-base: '1'
+                duration-scale: '0'
+                -shape: 'hexagon'
+                -shape-dir: 'XY'
+                -shape-size: '0.5'
+                -animation: 'one-circle'
+                -anim-dir: 'XZ'
+                -anim-size: '0.5'
+                -interval: '1'
+                -view-range: '20'
+                -particle-type: 'Redstone'
+                -particle-material: 'Dirt'
+                -particle-durability: '0'
+                -particle-data: '0'
+                -particle-dust-color: '#8080ff'
+                -particle-dust-size: '1'
+                -particle-amount: '1'
+                -particle-dx: '0'
+                -particle-dy: '0'
+                -particle-dz: '0'
+                -particle-speed: '0.7'
+                -initial-rotation: '0'
+                -with-rotation: 'False'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'damage'
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '5'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Particle-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Smoke large'
+                    arrangement: 'Sphere'
+                    radius-base: '1'
+                    radius-scale: '0'
+                    particles-base: '5'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '0.1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+Power Shot: 
+  name: 'Power Shot'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '12'
+    cooldown-scale: '0'
+    mana-base: '25'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 4
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Range: {attr:projectile.lifespan}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Ground-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            type: 'On Ground'
+          children: 
+            Inventory-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                amount-base: '3'
+                amount-scale: '0'
+                check-mat: 'True'
+                material: 'Arrow'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children: 
+                Sound-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    sound: 'Block beacon activate'
+                    volume-base: '100'
+                    volume-scale: '0'
+                    pitch-base: '1'
+                    pitch-scale: '0'
+                  children:  {}
+                Channel-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    still: 'True'
+                    time-base: '2'
+                    time-scale: '0'
+                  children: 
+                    Particle Projectile-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: 'projectile'
+                        counts: 'True'
+                        gravity: '0'
+                        pierce: 'True'
+                        group: 'Enemy'
+                        velocity-base: '0.8'
+                        velocity-scale: '0'
+                        lifespan-base: '1'
+                        lifespan-scale: '0.1'
+                        spread: 'Cone'
+                        amount-base: '1'
+                        amount-scale: '0'
+                        angle-base: '0'
+                        angle-scale: '0'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        upward-base: '0.5'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                        particle: 'Redstone'
+                        dust-color: '#33ff33'
+                        dust-size: '1'
+                        arrangement: 'Sphere'
+                        radius-base: '0.5'
+                        radius-scale: '0'
+                        particles-base: '20'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '0'
+                        speed: '1'
+                        frequency: '0.05'
+                        use-effect: 'True'
+                        effect-key: 'default'
+                        duration-base: '0.5'
+                        duration-scale: '0'
+                        -shape: 'linear'
+                        -shape-dir: 'XY'
+                        -shape-size: '1'
+                        -animation: 'three-spiral'
+                        -anim-dir: 'XZ'
+                        -anim-size: '1'
+                        -interval: '1'
+                        -view-range: '25'
+                        -particle-type: 'End rod'
+                        -particle-material: 'Dirt'
+                        -particle-durability: '0'
+                        -particle-data: '0'
+                        -particle-amount: '1'
+                        -particle-dx: '0'
+                        -particle-dy: '0'
+                        -particle-dz: '0'
+                        -particle-speed: '0'
+                        -initial-rotation: '0'
+                        -with-rotation: 'True'
+                      children: 
+                        Damage-g: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'damage'
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '15'
+                            value-scale: '2'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                    Sound-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Block beacon power select'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1'
+                        pitch-scale: '0'
+                      children:  {}
+                    Item Remove-i: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        amount-base: '3'
+                        amount-scale: '0'
+                        check-mat: 'True'
+                        material: 'Arrow'
+                        check-data: 'False'
+                        check-lore: 'False'
+                        check-name: 'False'
+                        regex: 'False'
+                      children:  {}
+            Else-j: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+              children: 
+                Message-k: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    message: '&cДля использования навыка необходимо иметь 3 стрелы!'
+                  children:  {}
+        Else-l: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-m: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо стоять на земле!'
+              children:  {}
+Shield: 
+  name: 'Shield'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '25'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 10
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Lifetime: {attr:block.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Ground-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            type: 'On Ground'
+          children: 
+            Offset-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                group: 'enemy'
+                wall: 'false'
+                caster: 'false'
+              children: 
+                Particle Animation-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    steps: '1'
+                    frequency: '0.05'
+                    angle: '0'
+                    start: '0'
+                    duration-base: '0.5'
+                    duration-scale: '0'
+                    h-translation-base: '0'
+                    h-translation-scale: '0'
+                    v-translation-base: '3'
+                    v-translation-scale: '0'
+                    h-cycles: '1'
+                    v-cycles: '1'
+                    particle: 'Redstone'
+                    dust-color: '#ff4c4c'
+                    dust-size: '1'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '0.5'
+                    radius-scale: '0'
+                    particles-base: '5'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '0'
+                    speed: '1'
+                    forward: '2'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+                Delay-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    delay-base: '0.5'
+                    delay-scale: '0'
+                  children: 
+                    Block-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: 'block'
+                        counts: 'True'
+                        shape: 'Cuboid'
+                        type: 'Any'
+                        block: 'Red stained glass'
+                        data: '0'
+                        seconds-base: '5'
+                        seconds-scale: '1'
+                        width-base: '3'
+                        width-scale: '0'
+                        height-base: '3'
+                        height-scale: '0'
+                        depth-base: '1'
+                        depth-scale: '0'
+                        forward-base: '2'
+                        forward-scale: '0'
+                        upward-base: '1'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                      children:  {}
+                    Sound-g: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Item shield block'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1.5'
+                        pitch-scale: '0'
+                      children:  {}
+                Delay-h: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    delay-base: '5'
+                    delay-scale: '1'
+                  children: 
+                    Particle-i: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Redstone'
+                        dust-color: '#ff4c4c'
+                        dust-size: '1'
+                        arrangement: 'Sphere'
+                        radius-base: '1.5'
+                        radius-scale: '0'
+                        particles-base: '25'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '0'
+                        speed: '1'
+                        forward: '2'
+                        upward: '1'
+                        right: '0'
+                      children:  {}
+                    Sound-j: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Item shield break'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1.5'
+                        pitch-scale: '0'
+                      children:  {}
+        Else-k: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-l: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо стоять на земле!'
+              children:  {}
+Shift: 
+  name: 'Shift'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '-1'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 7
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Launch-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            relative: 'Caster'
+            forward-base: '1'
+            forward-scale: '0'
+            upward-base: '0.1'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+          children:  {}
+        Particle Effect-c: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            effect-key: 'default'
+            duration-base: '1'
+            duration-scale: '0'
+            -shape: 'single'
+            -shape-dir: 'XY'
+            -shape-size: '1.5'
+            -animation: 'still'
+            -anim-dir: 'XZ'
+            -anim-size: '1'
+            -interval: '1'
+            -view-range: '25'
+            -particle-type: 'Redstone'
+            -particle-durability: '0'
+            -particle-dust-color: '#8080ff'
+            -particle-dust-size: '1'
+            -particle-amount: '1'
+            -particle-dx: '0'
+            -particle-dy: '0'
+            -particle-dz: '0'
+            -particle-speed: '1'
+            -initial-rotation: '0'
+            -with-rotation: 'True'
+          children:  {}
+Shrapnel: 
+  name: 'Shrapnel'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '-2'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 1
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Count: {attr:projectile.amount}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Location-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            range-base: '10'
+            range-scale: '0'
+            entities: 'True'
+            fluids: 'False'
+            passable: 'False'
+            center: 'False'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Ceiling-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                distance-base: '6'
+                distance-scale: '0'
+                at-least: 'True'
+              children: 
+                Item Projectile-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'projectile'
+                    counts: 'True'
+                    group: 'Enemy'
+                    material: 'Tnt'
+                    amount: '1'
+                    byte: '0'
+                    hide-flags: 
+                    - ' '
+                    - '{'
+                    - '}'
+                    custom: 'False'
+                    velocity-base: '-0.1'
+                    velocity-scale: '0'
+                    lifespan-base: '5'
+                    lifespan-scale: '0'
+                    spread: 'Rain'
+                    amount-base: '5'
+                    amount-scale: '1'
+                    height-base: '6'
+                    height-scale: '0'
+                    rain-radius-base: '2'
+                    rain-radius-scale: '0'
+                    forward-base: '0'
+                    forward-scale: '0'
+                    upward-base: '0.5'
+                    upward-scale: '0'
+                    right-base: '0'
+                    right-scale: '0'
+                    use-effect: 'True'
+                    effect-key: 'default'
+                    duration-base: '1'
+                    duration-scale: '0'
+                    -shape: 'single'
+                    -shape-dir: 'XY'
+                    -shape-size: '1'
+                    -animation: 'linear'
+                    -anim-dir: 'XZ'
+                    -anim-size: '1'
+                    -interval: '1'
+                    -view-range: '25'
+                    -particle-type: 'Smoke normal'
+                    -particle-material: 'Dirt'
+                    -particle-durability: '0'
+                    -particle-data: '0'
+                    -particle-amount: '1'
+                    -particle-dx: '0'
+                    -particle-dy: '0'
+                    -particle-dz: '0'
+                    -particle-speed: '0.01'
+                    -initial-rotation: '0'
+                    -with-rotation: 'True'
+                  children: 
+                    Area-e: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: 'area'
+                        radius-base: '2'
+                        radius-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        caster: 'In area'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                      children: 
+                        Damage-f: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'damage'
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '4'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                    Particle-g: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Smoke large'
+                        arrangement: 'Sphere'
+                        radius-base: '0.8'
+                        radius-scale: '0'
+                        particles-base: '15'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '1'
+                        speed: '0.1'
+                        forward: '0'
+                        upward: '0'
+                        right: '0'
+                      children:  {}
+                    Sound-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Entity generic explode'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1'
+                        pitch-scale: '0'
+                      children:  {}
+                Sound-i: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    sound: 'Entity firework rocket launch'
+                    volume-base: '100'
+                    volume-scale: '0'
+                    pitch-base: '0.5'
+                    pitch-scale: '0'
+                  children:  {}
+            Else-j: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+              children: 
+                Self-k: 
+                  type: 'target'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    group: 'enemy'
+                    wall: 'false'
+                    caster: 'false'
+                  children: 
+                    Message-l: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'False'
+                        message: '&cНад противником недостаточно пространства!'
+                      children:  {}
+Smoke: 
+  name: 'Smoke'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 13
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Работает только на игроков'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Radius: {attr:area.radius}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: 'area'
+            radius-base: '12'
+            radius-scale: '1'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            random: 'False'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'potion'
+                counts: 'True'
+                potion: 'Blindness'
+                ambient: 'True'
+                tier-base: '1'
+                tier-scale: '0'
+                seconds-base: '5'
+                seconds-scale: '1'
+              children:  {}
+            Entity Type-d: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                types: 
+                - 'Player'
+              children: 
+                Particle-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Smoke large'
+                    arrangement: 'Sphere'
+                    radius-base: '1'
+                    radius-scale: '0'
+                    particles-base: '20'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '3'
+                    speed: '0.1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+        Particle-f: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            particle: 'Smoke normal'
+            arrangement: 'Sphere'
+            radius-base: '1'
+            radius-scale: '2'
+            particles-base: '20'
+            particles-scale: '0'
+            visible-radius: '25'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '3'
+            speed: '0.2'
+            forward: '0'
+            upward: '0.5'
+            right: '0'
+          children:  {}
+        Sound-g: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            sound: 'Entity blaze shoot'
+            volume-base: '100'
+            volume-scale: '0'
+            pitch-base: '0.5'
+            pitch-scale: '0'
+          children:  {}
+Speed Boost: 
+  name: 'Speed Boost'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '0'
+    mana-base: '5'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 2
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Potion-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: 'potion'
+            counts: 'True'
+            potion: 'Speed'
+            ambient: 'False'
+            tier-base: '2'
+            tier-scale: '0'
+            seconds-base: '11'
+            seconds-scale: '2'
+          children:  {}
+        Particle Animation-c: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '2'
+            frequency: '0.05'
+            angle: '0'
+            start: '0'
+            duration-base: '11'
+            duration-scale: '2'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Redstone'
+            dust-color: '#00ffff'
+            dust-size: '1'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '0.3'
+            radius-scale: '0'
+            particles-base: '1'
+            particles-scale: '0'
+            visible-radius: '15'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '0'
+            speed: '1'
+            forward: '0'
+            upward: '0.1'
+            right: '0'
+          children:  {}
+        Delay-d: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            delay-base: '11'
+            delay-scale: '2'
+          children: 
+            Particle Animation-e: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                steps: '2'
+                frequency: '0.05'
+                angle: '7200'
+                start: '45'
+                duration-base: '1'
+                duration-scale: '0'
+                h-translation-base: '2'
+                h-translation-scale: '0'
+                v-translation-base: '0'
+                v-translation-scale: '0'
+                h-cycles: '1'
+                v-cycles: '1'
+                particle: 'Redstone'
+                dust-color: '#00ffff'
+                dust-size: '1'
+                arrangement: 'Circle'
+                direction: 'XZ'
+                radius-base: '0.2'
+                radius-scale: '0'
+                particles-base: '1'
+                particles-scale: '0'
+                visible-radius: '15'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '0'
+                speed: '1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              children:  {}
+Spider: 
+  name: 'Spider'
+  type: 'Dynamic'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '35'
+    cooldown-scale: '0'
+    mana-base: '30'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 12
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage {attr:spider.damage}'
+  - '&2Health {attr:spider.health}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Wolf-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: 'spider'
+            counts: 'True'
+            color: 'BLACK'
+            name: 'Паук'
+            health-base: '30'
+            health-scale: '5'
+            damage-base: '5'
+            damage-scale: '1'
+            sitting: 'False'
+            seconds-base: '20'
+            seconds-scale: '0'
+            amount-base: '1'
+            amount-scale: '0'
+            skills: 
+            - ''
+          children: 
+            Disguise-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                duration-base: '-1'
+                duration-scale: '0'
+                type: 'Mob'
+                mob: 'Spider'
+                adult: 'True'
+                data: '0'
+              children:  {}
+            Particle-d: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                particle: 'Smoke large'
+                arrangement: 'Sphere'
+                radius-base: '0.2'
+                radius-scale: '0'
+                particles-base: '10'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              children:  {}
+Splash: 
+  name: 'Splash'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 5
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'True'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '999'
+      children: 
+        Offset-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            forward-base: '0.3'
+            forward-scale: '0'
+            upward-base: '0.4'
+            upward-scale: '0'
+            right-base: '0'
+            right-scale: '0'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Particle Animation-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                steps: '5'
+                frequency: '0.05'
+                angle: '90'
+                start: '0'
+                duration-base: '0.1'
+                duration-scale: '0'
+                h-translation-base: '0'
+                h-translation-scale: '0'
+                v-translation-base: '-1'
+                v-translation-scale: '0'
+                h-cycles: '1'
+                v-cycles: '1'
+                particle: 'Crit'
+                arrangement: 'Circle'
+                direction: 'XZ'
+                radius-base: '0'
+                radius-scale: '0'
+                particles-base: '2'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0'
+                forward: '1'
+                upward: '1.5'
+                right: '-0.9'
+                -with-rotation: 'False'
+              children:  {}
+        Linear-d: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            range-base: '3'
+            range-scale: '0'
+            tolerance-base: '1.5'
+            tolerance-scale: '0'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+          children: 
+            Damage-e: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'damage'
+                counts: 'True'
+                type: 'Damage'
+                value-base: '1'
+                value-scale: '1'
+                true: 'False'
+                classifier: 'default'
+                knockback: 'True'
+              children:  {}
+Totem: 
+  name: 'Totem'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '35'
+    cooldown-scale: '0'
+    mana-base: '20'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 11
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Ground-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            type: 'On Ground'
+          children: 
+            Offset-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0.3'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                group: 'enemy'
+                wall: 'false'
+                caster: 'false'
+              children: 
+                Particle Animation-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    steps: '1'
+                    frequency: '0.05'
+                    angle: '0'
+                    start: '0'
+                    duration-base: '5'
+                    duration-scale: '0'
+                    h-translation-base: '0'
+                    h-translation-scale: '0'
+                    v-translation-base: '0'
+                    v-translation-scale: '0'
+                    h-cycles: '1'
+                    v-cycles: '1'
+                    particle: 'Redstone'
+                    dust-color: '#3333ff'
+                    dust-size: '1'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '3'
+                    radius-scale: '0'
+                    particles-base: '5'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '0'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+                Particle Animation-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    steps: '2'
+                    frequency: '0.05'
+                    angle: '1440'
+                    start: '0'
+                    duration-base: '7'
+                    duration-scale: '0'
+                    h-translation-base: '0'
+                    h-translation-scale: '0'
+                    v-translation-base: '0'
+                    v-translation-scale: '0'
+                    h-cycles: '1'
+                    v-cycles: '1'
+                    particle: 'Redstone'
+                    dust-color: '#8000ff'
+                    dust-size: '1'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '0'
+                    radius-scale: '0'
+                    particles-base: '1'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '0'
+                    speed: '1'
+                    forward: '7'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+                Armor Stand-f: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    key: 'default'
+                    duration-base: '6'
+                    duration-scale: '0'
+                    name: ''
+                    name-visible: 'False'
+                    follow: 'False'
+                    gravity: 'False'
+                    tiny: 'False'
+                    arms: 'False'
+                    base: 'False'
+                    visible: 'False'
+                    marker: 'True'
+                    forward-base: '0.3'
+                    forward-scale: '0'
+                    upward-base: '0.5'
+                    upward-scale: '0'
+                    right-base: '0'
+                    right-scale: '0'
+                  children: 
+                    Armor-g: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        slot: 'Head'
+                        overwrite: 'False'
+                        material: 'Totem of undying'
+                        amount: '1'
+                        byte: '0'
+                        hide-flags: 
+                        - ' '
+                        - '{'
+                        - '}'
+                        custom: 'False'
+                      children:  {}
+                    Offset-h: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        forward-base: '-0.3'
+                        forward-scale: '0'
+                        upward-base: '0'
+                        upward-scale: '0.5'
+                        right-base: '0'
+                        right-scale: '0'
+                        group: 'enemy'
+                        wall: 'false'
+                        caster: 'false'
+                      children: 
+                        Particle Animation-i: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            steps: '1'
+                            frequency: '0.05'
+                            angle: '1440'
+                            start: '0'
+                            duration-base: '5.5'
+                            duration-scale: '0'
+                            h-translation-base: '0'
+                            h-translation-scale: '0'
+                            v-translation-base: '0'
+                            v-translation-scale: '0'
+                            h-cycles: '1'
+                            v-cycles: '1'
+                            particle: 'Redstone'
+                            dust-color: '#ffff66'
+                            dust-size: '1'
+                            arrangement: 'Circle'
+                            direction: 'XY'
+                            radius-base: '0'
+                            radius-scale: '0'
+                            particles-base: '1'
+                            particles-scale: '0'
+                            visible-radius: '25'
+                            dx: '0'
+                            dy: '0'
+                            dz: '0'
+                            amount: '0'
+                            speed: '1'
+                            forward: '0.4'
+                            upward: '2.1'
+                            right: '0'
+                          children:  {}
+                        Delay-j: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            delay-base: '6'
+                            delay-scale: '0'
+                          children: 
+                            Particle-k: 
+                              type: 'mechanic'
+                              indicator: 'None'
+                              data: 
+                                icon-key: ''
+                                counts: 'True'
+                                particle: 'Smoke normal'
+                                arrangement: 'Sphere'
+                                radius-base: '0.5'
+                                radius-scale: '0'
+                                particles-base: '10'
+                                particles-scale: '0'
+                                visible-radius: '25'
+                                dx: '0'
+                                dy: '0'
+                                dz: '0'
+                                amount: '1'
+                                speed: '0.1'
+                                forward: '0'
+                                upward: '1.6'
+                                right: '0'
+                              children:  {}
+                Repeat-l: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    repetitions-base: '7'
+                    repetitions-scale: '0'
+                    period: '1'
+                    delay: '0'
+                    stop-on-fail: 'False'
+                  children: 
+                    Area-m: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        radius-base: '3'
+                        radius-scale: '0'
+                        group: 'Ally'
+                        wall: 'False'
+                        caster: 'True'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                      children: 
+                        Potion-n: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'potion'
+                            counts: 'True'
+                            potion: 'Regeneration'
+                            ambient: 'True'
+                            tier-base: '2'
+                            tier-scale: '0'
+                            seconds-base: '5'
+                            seconds-scale: '1'
+                          children:  {}
+                    Area-o: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        radius-base: '7'
+                        radius-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        caster: 'False'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                      children: 
+                        Potion-p: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            potion: 'Slow'
+                            ambient: 'True'
+                            tier-base: '1'
+                            tier-scale: '0'
+                            seconds-base: '5'
+                            seconds-scale: '1'
+                          children:  {}
+        Else-q: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-r: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо стоять на земле!'
+              children:  {}
+Trap: 
+  name: 'Trap'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '0'
+    mana-base: '20'
+    mana-scale: '10'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 3
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Area Time: {attr:repeat.repetitions}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Ground-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            type: 'On Ground'
+          children: 
+            Offset-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '0.3'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                group: 'enemy'
+                wall: 'false'
+                caster: 'false'
+              children: 
+                Particle Animation-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    steps: '2'
+                    frequency: '0.05'
+                    angle: '0'
+                    start: '0'
+                    duration-base: '2'
+                    duration-scale: '0'
+                    h-translation-base: '0'
+                    h-translation-scale: '0'
+                    v-translation-base: '0'
+                    v-translation-scale: '0'
+                    h-cycles: '1'
+                    v-cycles: '1'
+                    particle: 'Redstone'
+                    dust-color: '#4c4c4c'
+                    dust-size: '1'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '5'
+                    radius-scale: '0'
+                    particles-base: '2'
+                    particles-scale: '0'
+                    visible-radius: '30'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '0'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0.1'
+                    right: '0'
+                  children:  {}
+                Repeat-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'repeat'
+                    counts: 'True'
+                    repetitions-base: '15'
+                    repetitions-scale: '1'
+                    period: '1'
+                    delay: '0'
+                    stop-on-fail: 'False'
+                  children: 
+                    Area-f: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        radius-base: '5'
+                        radius-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        caster: 'False'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                      children: 
+                        Potion-g: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            potion: 'Slow'
+                            ambient: 'True'
+                            tier-base: '2'
+                            tier-scale: '0'
+                            seconds-base: '3'
+                            seconds-scale: '2'
+                          children:  {}
+                        Damage-h: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '1'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                        Particle-i: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            particle: 'Block dust'
+                            material: 'Redstone block'
+                            arrangement: 'Circle'
+                            direction: 'XZ'
+                            radius-base: '0.2'
+                            radius-scale: '0'
+                            particles-base: '20'
+                            particles-scale: '0'
+                            visible-radius: '20'
+                            dx: '0'
+                            dy: '0'
+                            dz: '0'
+                            amount: '1'
+                            speed: '0.1'
+                            forward: '0'
+                            upward: '0.5'
+                            right: '0'
+                          children:  {}
+        Else-j: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-k: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо стоять на земле!'
+              children:  {}
+Zero Trap: 
+  name: 'Zero Trap'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '70'
+    cooldown-scale: '0'
+    mana-base: '40'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 16
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Area Time: {attr:repeat.repetitions}'
+  - '&2Potion: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Repeat-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: 'repeat'
+            counts: 'True'
+            repetitions-base: '10'
+            repetitions-scale: '1'
+            period: '1'
+            delay: '0'
+            stop-on-fail: 'False'
+          children: 
+            Area-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                radius-base: '5'
+                radius-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+                random: 'False'
+              children: 
+                Particle-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Spell mob'
+                    arrangement: 'Hemisphere'
+                    radius-base: '0.4'
+                    radius-scale: '0'
+                    particles-base: '2'
+                    particles-scale: '0'
+                    visible-radius: '20'
+                    dx: '0.1'
+                    dy: '0.7'
+                    dz: '0.1'
+                    amount: '0'
+                    speed: '0.1'
+                    forward: '0'
+                    upward: '1.5'
+                    right: '0'
+                  children:  {}
+                Potion-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'potion'
+                    counts: 'True'
+                    potion: 'Slow'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+                Potion-f: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Blindness'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+                Potion-g: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Poison'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+        Particle Animation-h: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '2'
+            frequency: '0.05'
+            angle: '0'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '1'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Redstone'
+            dust-color: '#0B470B'
+            dust-size: '1'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '10'
+            radius-scale: '0'
+            particles-base: '2'
+            particles-scale: '0'
+            visible-radius: '30'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '0'
+            speed: '1'
+            forward: '0'
+            upward: '0.1'
+            right: '0'
+          children:  {}

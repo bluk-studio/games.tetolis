@@ -1,0 +1,207 @@
+Dart: 
+  name: 'Dart'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '12'
+    cooldown-scale: '1'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 15
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '1'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Repeat-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                repetitions-base: '3'
+                repetitions-scale: '0'
+                period: '0.55'
+                delay: '0'
+                stop-on-fail: 'False'
+              children: 
+                Inventory-d: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    amount-base: '1'
+                    amount-scale: '0'
+                    check-mat: 'True'
+                    material: 'Arrow'
+                    check-data: 'False'
+                    check-lore: 'False'
+                    check-name: 'False'
+                    regex: 'False'
+                  children: 
+                    Projectile-e: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        projectile: 'Arrow'
+                        flaming: 'False'
+                        cost: 'All'
+                        velocity-base: '3'
+                        velocity-scale: '0'
+                        lifespan-base: '10'
+                        lifespan-scale: '0'
+                        spread: 'Cone'
+                        amount-base: '1'
+                        amount-scale: '0'
+                        angle-base: '30'
+                        angle-scale: '0'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        upward-base: '0'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                        use-effect: 'False'
+                      children: 
+                        Potion-f: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'potion'
+                            counts: 'True'
+                            potion: 'Slow'
+                            ambient: 'True'
+                            tier-base: '3'
+                            tier-scale: '0'
+                            seconds-base: '2'
+                            seconds-scale: '1'
+                          children:  {}
+                        Damage-g: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '4'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                        Particle-h: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: ''
+                            counts: 'True'
+                            particle: 'Spell mob'
+                            arrangement: 'Circle'
+                            direction: 'XZ'
+                            radius-base: '0'
+                            radius-scale: '0'
+                            particles-base: '5'
+                            particles-scale: '0'
+                            visible-radius: '25'
+                            dx: '0.2'
+                            dy: '0.5'
+                            dz: '0.2'
+                            amount: '0'
+                            speed: '1'
+                            forward: '0'
+                            upward: '0'
+                            right: '0'
+                          children:  {}
+                    Particle-i: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Smoke normal'
+                        arrangement: 'Circle'
+                        direction: 'XZ'
+                        radius-base: '0'
+                        radius-scale: '0'
+                        particles-base: '1'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '1'
+                        speed: '0.05'
+                        forward: '0.3'
+                        upward: '1.5'
+                        right: '0'
+                      children:  {}
+                Else-j: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Cancel-k: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                      children:  {}
+        Else-l: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-m: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь хотя бы 1 стрелу!'
+              children:  {}

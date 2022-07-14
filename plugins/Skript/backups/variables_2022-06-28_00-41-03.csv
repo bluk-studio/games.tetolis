@@ -1,0 +1,27 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.6.2
+
+area::loaded::1, string, 800D6E65737465642E617265614964
+area::nested.areaid::bounds::1, string, 8016617265612D6E65737465642E6172656149642D333032
+area::nested.areaid::bounds::2, string, 8016617265612D6E65737465642E6172656149642D313733
+area::nested.areaid::price, long, 0000000000000064
+area::nested.areaid::renttime, timespan, 81066D696C6C6973040000000005265C00
+furniture::item::loaded::1, string, 80176E65737465642E6675726E69747572652E746573744964
+furniture::item::nested.furniture.testid, boolean, 01
+furniture::item::nested.furniture.testid::description::1, string, 8021D0A2D0B5D181D182D0BED0B2D0BED0B520D0BED0BFD0B8D181D0B0D0BDD0B8D0B5
+furniture::item::nested.furniture.testid::dimensions, string, 8003317832
+furniture::item::nested.furniture.testid::modeldata, integer, 00000001
+furniture::item::nested.furniture.testid::name, string, 801DD09AD180D183D182D0BED0B520D0BDD0B0D0B7D0B2D0B0D0BDD0B8D0B5
+furniture::item::nested.furniture.testid::traits::1, string, 800A69735369747461626C65
+furniture::shop::loaded::1, string, 800D6E65737465642E73686F704964
+furniture::shop::nested.shopid, boolean, 01
+furniture::shop::nested.shopid::bounds::1, string, 801B6675726E69747572652D6E65737465642E73686F7049642D393138
+furniture::shop::nested.shopid::bounds::2, string, 801A6675726E69747572652D6E65737465642E73686F7049642D3833
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.nestedevenfurhter.evenfurther.fuckyourself.yeahid::hologramlocation, location, 8605776F726C6480FF0000000181046E616D65208005776F726C64017809BFE00000000000000179094044C00000000000017A09C0699333333333330570697463680800000000037961770800000000
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.nestedevenfurhter.evenfurther.fuckyourself.yeahid::itemid, string, 80176E65737465642E6675726E69747572652E746573744964
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.nestedevenfurhter.evenfurther.fuckyourself.yeahid::price, integer, 00000078
+furniture::shop::nested.shopid::items::1, string, 804C6E65737465642E73686F7049642E6974656D732E6E65737465642E6E65737465644576656E467572687465722E6576656E467572746865722E6675636B596F757273656C662E796561684964
+temp::dogleash::currentlyatshop, string, 800D6E65737465642E73686F704964
+

@@ -1,0 +1,16 @@
+database.db
+banned-ips.json
+banned-players.json
+ops.json
+ops.json.backup
+usercache.json
+version_history.json
+whitelist.json
+.console_history
+.ctsystem
+.gitconfig
+.codetogether
+.openvscode-server
+cache
+logs
+versions

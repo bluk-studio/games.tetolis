@@ -1,0 +1,108 @@
+# LoadShop
+function FurnitureShop_loadShop(file: string, path: string):
+  # Getting shop information
+  set {_id} to {_path}
+  
+  set {_locations::*} to yaml list "%{_path}%.locations" from {_file}
+  if size of {_locations::*} <= 0:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки магазина %{_id}% &7(Файл: %{_file}%) &fотсутствует список locations"
+    stop
+
+  # Setting up shop locations
+  loop {_locations::*}:
+    set {_temp::*} to loop-value split at "to"
+    set {_location::1} to location of block at FurnitureShop_getLocationFromString({_temp::1})
+    set {_location::2} to location of block at FurnitureShop_getLocationFromString({_temp::2})
+
+    if {_location::1} and {_location::2} is set:
+      # Creating new bound
+      set {_boundId} to "furniture-%{_id}%-%random integer between 000 and 999%"
+      create a new bound with id {_boundId} within {_location::1} and {_location::2}
+
+      add {_boundId} to {_bounds::*}
+
+  if size of {_bounds::*} <= 0:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки магазина %{_id}% &7(Файл: %{_file}%) &fнеправильно записан список locations"
+    stop
+
+  set {furniture::shop::%{_id}%::bounds::*} to {_bounds::*}
+
+  # Getting paths of all items
+  loop all yaml nodes from {_file}:
+    loop-value ends with "itemId"
+    loop-value starts with "%{_id}%.items":
+      set {_path} to loop-value
+      
+      # Replacing
+      replace all ".itemId" in {_path} with ""
+      FurnitureShop_loadShopItem({_file}, {_path}, {_id})
+
+  broadcast "&a[FurnitureShop] &fЗагружен магазин %{_id}% &7(Файл: %{_file}%, Предметов: %size of {furniture::shop::%{_id}%::items::*}%)"
+  add {_id} to {furniture::shop::loaded::*}
+
+function FurnitureShop_loadShopItem(file: string, path: string, shopId: string):
+  # Getting shop item information
+  set {_id} to {_path}
+
+  set {_itemId} to yaml value "%{_path}%.itemId" from {_file}
+  if {_itemId} is not set:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки предмета магазина &7(Id магазина: %{_shopId}%, Id предмета: %{_id}%) &fполе itemId отсутсвует"
+    stop
+
+  if {furniture::item::%{_itemId}%} is not set:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки предмета магазина &7(Id магазина: %{_shopId}%, Id предмета: %{_id}%) &fпредмет с данным Id отсутсвует"
+    stop
+
+  # Gathering information
+  set {_price} to yaml value "%{_path}%.price" from {_file} ? 100
+
+  # Entity info
+  set {_entity::location} to yaml value "%{_path}%.entity.location" from {_file}
+  set {_entity::location} to FurnitureShop_getLocationFromString({_entity::location})
+  if {_entity::location} is not set:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки предмета магазина &7(Id магазина: %{_shopId}%, Id предмета: %{_id}%) &fполе entity.location некорректное"
+    stop
+
+  # > Rotations
+  set {_entity::rotationX} to yaml value "%{_path}%.entity.rotationX" from {_file} ? 0
+  set {_entity::rotationX} to "%{_entity::rotationX}%" parsed as number
+
+  set {_entity::rotationY} to yaml value "%{_path}%.entity.rotationY" from {_file} ? 0
+  set {_entity::rotationY} to "%{_entity::rotationY}%" parsed as number
+  
+  set {_entity::rotationZ} to yaml value "%{_path}%.entity.rotationZ" from {_file} ? 0
+  set {_entity::rotationZ} to "%{_entity::rotationZ}%" parsed as number
+
+  # > "Traits"
+
+  # Hologram info
+  set {_hologram::location} to yaml value "%{_path}%.hologramLocation" from {_file}
+  set {_hologram::location} to FurnitureShop_getLocationFromString({_hologram::location})
+  if {_hologram::location} is not set:
+    broadcast "&c[FurnitureShop] &fОшибка загрузки предмета магазина &7(Id магазина: %{_shopId}%, Id предмета: %{_id}%) &fполе hologramLocation некорректное"
+    stop
+
+  # Saving all this information
+  set {furniture::shop::%{_shopId}%} to true
+  set {furniture::shop::%{_shopId}%::item::%{_id}%::itemId} to {_itemId}
+  set {furniture::shop::%{_shopId}%::item::%{_id}%::price} to {_price}
+  set {furniture::shop::%{_shopId}%::item::%{_id}%::hologramLocation} to {_hologram::location}
+
+  add {_id} to {furniture::shop::%{_shopId}%::items::*}
+
+  # Rotations
+
+  # Spawning entity
+  spawn 1 armor stand at {_entity::location} with nbt "{Invisible:1b,NoGravity:1b,Pose:{Head:[%{_entity::rotationX}%f,%{_entity::rotationY}%f,%{_entity::rotationZ}%f]}}"
+  set {_entity} to last spawned armor stand
+
+  # Item
+  set {_modelData} to {furniture::item::%{_itemId}%::modelData}
+
+  set {_item} to paper with nbt "{CustomModelData:%{_modelData}%}"
+  set helmet of {_entity} to {_item}
+
+  add {_entity} to {furniture::entities::*}
+
+  # Creating hologram for this item
+  FurnitureShop_spawnBuyHologram({_shopId}, {_id})

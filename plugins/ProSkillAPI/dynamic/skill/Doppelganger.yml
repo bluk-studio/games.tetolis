@@ -1,0 +1,102 @@
+Doppelganger: 
+  name: 'Doppelganger'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '35'
+    cooldown-scale: '0'
+    mana-base: '10'
+    mana-scale: '2'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 28
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Radius: {attr:area.radius}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: 'area'
+            radius-base: '4'
+            radius-scale: '1'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            random: 'False'
+          children: 
+            Push-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                type: 'Fixed'
+                speed-base: '-0.5'
+                speed-scale: '-0.5'
+                source: 'none'
+              children:  {}
+            Particle Animation-d: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                steps: '1'
+                frequency: '0.05'
+                angle: '0'
+                start: '0'
+                duration-base: '0.4'
+                duration-scale: '0'
+                h-translation-base: '0'
+                h-translation-scale: '0'
+                v-translation-base: '0'
+                v-translation-scale: '0'
+                h-cycles: '1'
+                v-cycles: '1'
+                particle: 'Cloud'
+                arrangement: 'Sphere'
+                radius-base: '0.15'
+                radius-scale: '0'
+                particles-base: '1'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.05'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+                -with-rotation: 'False'
+              children:  {}

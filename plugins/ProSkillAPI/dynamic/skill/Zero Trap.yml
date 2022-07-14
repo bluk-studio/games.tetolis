@@ -1,0 +1,167 @@
+Zero Trap: 
+  name: 'Zero Trap'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '70'
+    cooldown-scale: '0'
+    mana-base: '40'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 16
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Area Time: {attr:repeat.repetitions}'
+  - '&2Potion: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Repeat-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: 'repeat'
+            counts: 'True'
+            repetitions-base: '10'
+            repetitions-scale: '1'
+            period: '1'
+            delay: '0'
+            stop-on-fail: 'False'
+          children: 
+            Area-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                radius-base: '5'
+                radius-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+                random: 'False'
+              children: 
+                Particle-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Spell mob'
+                    arrangement: 'Hemisphere'
+                    radius-base: '0.4'
+                    radius-scale: '0'
+                    particles-base: '2'
+                    particles-scale: '0'
+                    visible-radius: '20'
+                    dx: '0.1'
+                    dy: '0.7'
+                    dz: '0.1'
+                    amount: '0'
+                    speed: '0.1'
+                    forward: '0'
+                    upward: '1.5'
+                    right: '0'
+                  children:  {}
+                Potion-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'potion'
+                    counts: 'True'
+                    potion: 'Slow'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+                Potion-f: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Blindness'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+                Potion-g: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Poison'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '3'
+                    seconds-scale: '1'
+                  children:  {}
+        Particle Animation-h: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            steps: '2'
+            frequency: '0.05'
+            angle: '0'
+            start: '0'
+            duration-base: '10'
+            duration-scale: '1'
+            h-translation-base: '0'
+            h-translation-scale: '0'
+            v-translation-base: '0'
+            v-translation-scale: '0'
+            h-cycles: '1'
+            v-cycles: '1'
+            particle: 'Redstone'
+            dust-color: '#0B470B'
+            dust-size: '1'
+            arrangement: 'Circle'
+            direction: 'XZ'
+            radius-base: '10'
+            radius-scale: '0'
+            particles-base: '2'
+            particles-scale: '0'
+            visible-radius: '30'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '0'
+            speed: '1'
+            forward: '0'
+            upward: '0.1'
+            right: '0'
+          children:  {}

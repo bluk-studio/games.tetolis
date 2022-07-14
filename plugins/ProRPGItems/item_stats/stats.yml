@@ -1,0 +1,165 @@
+#DIRECT_DAMAGE:
+#  enabled: true
+#  name: Direct Damage
+#  format: '&f▸ %name%: &f%value%'
+#  capacity: 100.0
+
+AOE_DAMAGE:
+  enabled: true
+  name: 'AoE Урон'
+  format: '&3▸ %name%: &f%value%'
+  capacity: -1
+
+PVP_DAMAGE:
+  enabled: true
+  name: 'PvP Урон'
+  format: '&b▸ %name%: &f%value%'
+  capacity: 200.0
+
+PVE_DAMAGE:
+  enabled: true
+  name: 'PvE Урон'
+  format: '&b▸ %name%: &f%value%'
+  capacity: 200.0
+
+DODGE_RATE:
+  enabled: true
+  name: 'Шанс Уклонения'
+  format: '&6▸ %name%: &f%value%'
+  capacity: 45.0
+
+ACCURACY_RATE:
+  enabled: true
+  name: 'Шанс Попадания'
+  format: '&6▸ %name%: &f%value%'
+  capacity: 30.0
+
+BLOCK_RATE:
+  enabled: true
+  name: 'Шанс Блокирования'
+  format: '&6▸ %name%: &f%value%'
+  capacity: 100.0
+
+BLOCK_DAMAGE:
+  enabled: true
+  name: 'Заблокированный урон'
+  format: '&6▸ %name%: &f%value%'
+  capacity: 100.0
+
+CRITICAL_RATE:
+  enabled: true
+  name: 'Шанс Крит. Урона'
+  format: '&a▸ %name%: &f%value%'
+  capacity: 100.0
+
+CRITICAL_DAMAGE:
+  enabled: true
+  name: 'Крит. Урон'
+  format: '&a▸ %name%: &f%value%'
+  capacity: 3.5
+
+PVP_DEFENSE:
+  enabled: true
+  name: 'PvP Защита'
+  format: '&b▸ %name%: &f%value%'
+  capacity: 100.0
+
+PVE_DEFENSE:
+  enabled: true
+  name: 'PvE Защита'
+  format: '&b▸ %name%: &f%value%'
+  capacity: 100.0
+
+LOOT_RATE:
+  enabled: true
+  name: 'Шанс Выпадения'
+  format: '&e▸ %name%: &f%value%'
+  capacity: 250.0
+
+MOVEMENT_SPEED:
+  enabled: true
+  name: 'Скорость Ходьбы'
+  format: '&e▸ %name%: &f%value%'
+  capacity: 70.0
+
+DURABILITY:
+  enabled: true
+  name: 'Прочность'
+  format: '&7▸ %name%: &f%value%'
+  capacity: -1
+
+PENETRATION:
+  enabled: true
+  name: 'Пробивание брони'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 60.0
+
+VAMPIRISM:
+  enabled: true
+  name: 'Вампиризм'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 35.0
+
+BURN_RATE:
+  enabled: true
+  name: 'Шанс Поджога'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 100.0
+
+ATTACK_SPEED:
+  enabled: true
+  name: 'Скорость Атаки'
+  format: '&e▸ %name%: &f%value%'
+  capacity: -1
+
+MAX_HEALTH:
+  enabled: true
+  name: 'Макс. Здоровье'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 20
+
+SALE_PRICE:
+  enabled: true
+  name: 'Цена Продажи'
+  format: '&d▸ %name%: &f%value%'
+  capacity: -1
+
+BLEED_RATE:
+  enabled: true
+  name: 'Шанс Кровотечения'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 75.0
+  settings:
+    damage: '%damage% * 0.5'
+    of-max-health: false
+    duration: 10.0
+
+DISARM_RATE:
+  enabled: true
+  name: 'Шанс Обезоружить'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 25.0
+
+RANGE:
+  enabled: true
+  name: 'Дальность'
+  format: '&6▸ %name%: &f%value%'
+  capacity: 7.0
+
+THORNMAIL:
+  enabled: true
+  name: 'Возврат Урона'
+  format: '&c▸ %name%: &f%value%'
+  capacity: 35.0
+
+HEALTH_REGEN:
+  enabled: true
+  name: 'Восстановление Здоровья'
+  format: '&c▸ %name%: &f%value%'
+  capacity: -1.0
+
+MANA_REGEN:
+  enabled: true
+  name: 'Восстановление Маны'
+  format: '&9▸ %name%: &f%value%'
+  capacity: -1.0

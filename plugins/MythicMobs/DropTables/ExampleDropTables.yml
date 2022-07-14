@@ -1,0 +1,101 @@
+Koza:
+  Drops:
+  - BEEF 1 0.3
+  - WOOL 3 0.8
+
+BanditWarvar:
+  Drops:
+  - IRON_NUGGET 2 0.9
+  - old_axe 1 0.25
+  - GUNPOWDER 1 0.5
+
+AbyssKnight:
+  Drops:
+  - pil_pustoti 1 1
+
+Golem:
+  MaxItems: 1
+  MinItems: 1
+  Drops:
+  - RAW_IRON 1 1
+  - RAW_IRON 2 0.3
+
+Rygli:
+  Drops:
+  - kogotRygli 0.8
+  - LEATHER 5 0.6
+
+Skripisk:
+  Drops:
+  - klik 0.25
+  - LEATHER 0.9
+
+Lixodey:
+  Drops:
+  - SWEET_BERRIES 0.3
+  - LEATHER 2 0.9
+
+Wolf:
+  Drops:
+  - volch 0.3
+  - LEATHER 3 0.9
+
+Ayc:
+  Drops:
+  - MELON_SLICE 3 0.5
+  - GLISTERING_MELON_SLICE 1 0.01
+  - LEATHER 1 0.7
+
+GoblinBower:
+  Drops:
+  - LEATHER 3 0.9
+  - goblin_head 1 0.2
+  - old_bow 1 0.2
+  - HealPotion 1 0.2 
+Goblin:
+  Drops:
+  - LEATHER 3 0.9
+  - goblin_head 1 0.2
+  - HealPotion 1 0.2
+  - old_sword 1 0.2
+
+Ork:
+  Drops:
+  - ork_head 1 0.01
+  - old_axe 1 0.3
+  - green_flesh 2 0.9
+OrkBower:
+  Drops:
+  - ork_head 1 0.01
+  - old_bow 1 0.3
+  - green_flesh 2 0.9
+OrkShaman:
+  Drops:
+  - ork_head 1 0.01
+  - green_flesh 2 0.9
+  - shaman_posoh 1 0.1
+
+Ogr:
+  Drops:
+  - LEATHER 3 0.6
+  - rog_ogra 2 0.9
+
+Bandit:
+  Drops:
+  - IRON_NUGGET 1 0.9
+  - IRON_NUGGET 1 0.4
+  - GUNPOWDER 1 0.5
+BanditBow:
+  Drops:
+  - IRON_NUGGET 2 0.9
+  - ARROW 10 0.25
+  - GUNPOWDER 1 0.5
+
+ZombieDrop:
+  Drops:
+  - ROTTEN_FLESH 3 0.9
+  - ZOMBIE_HEAD 1 0.15
+SkeletonDrop:
+  Drops:
+  - BONE 2 1
+  - SKULL 1 0.15

@@ -1,0 +1,229 @@
+loaded: 'true'
+Alchemist: 
+  name: 'Alchemist'
+  action-bar: ''
+  prefix: '&2Алхимик'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 41
+  parent: 'Hunter'
+  needs-permission: 'false'
+  attributes: 
+    health-base: '10'
+    health-scale: '1'
+    mana-base: '1'
+    mana-scale: '7'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Mage Boost'
+  - 'Mage Bow'
+  - 'Fire Arrow'
+  - 'Elemental Arrow'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dАлхимик...'
+  exp-source: 273
+Guardsman: 
+  name: 'Guardsman'
+  action-bar: ''
+  prefix: '&2Гвардеец'
+  group: 'class'
+  mana: '&2Энергия'
+  max-level: 21
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '2'
+    mana-base: '10'
+    mana-scale: '10'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Splash'
+  - 'Buff'
+  - 'Shift'
+  - 'God Shields'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dГвардеец...'
+  exp-source: 273
+Hunter: 
+  name: 'Hunter'
+  action-bar: ''
+  prefix: '&2Охотник'
+  group: 'class'
+  mana: '&2Энергия'
+  max-level: 21
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '2'
+    mana-base: '20'
+    mana-scale: '5'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Shrapnel'
+  - 'Speed Boost'
+  - 'Trap'
+  - 'Power Shot'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dОхотник...'
+  exp-source: 273
+Mage: 
+  name: 'Mage'
+  action-bar: ''
+  prefix: '&2Маг'
+  group: 'class'
+  mana: '&2Мана'
+  max-level: 21
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '21'
+    health-scale: '1'
+    mana-base: '30'
+    mana-scale: '10'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Spider'
+  - 'Mana Rocket'
+  - 'Shield'
+  - 'Totem'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dМаг...'
+  exp-source: 273
+Ninja: 
+  name: 'Ninja'
+  action-bar: ''
+  prefix: '&2Ниндзя'
+  group: 'class'
+  mana: '&2Энергия'
+  max-level: 41
+  parent: 'Hunter'
+  needs-permission: 'false'
+  attributes: 
+    health-base: '10'
+    health-scale: '1'
+    mana-base: '10'
+    mana-scale: '5'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Smoke'
+  - 'Ghost'
+  - 'Dart'
+  - 'Zero Trap'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dНиндзя...'
+  exp-source: 273
+Warrior: 
+  name: 'Warrior'
+  action-bar: ''
+  prefix: '&2Воин'
+  group: 'class'
+  mana: '&2Энергия'
+  max-level: 41
+  parent: 'Guardsman'
+  needs-permission: 'false'
+  attributes: 
+    health-base: '10'
+    health-scale: '3'
+    mana-base: '1'
+    mana-scale: '7'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Bash'
+  - 'Bulldoze'
+  - 'Doppelganger'
+  - 'EarthShock'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dВоин...'
+  exp-source: 273

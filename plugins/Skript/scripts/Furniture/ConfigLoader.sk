@@ -1,0 +1,37 @@
+# LoadFurniture
+function Furniture_loadItem(file: string, path: string):
+  # Getting furniture information
+  set {_id} to {_path}
+  set {_name} to yaml value "%{_path}%.name" from {_file} ? "Название отсутствует"
+  set {_description::*} to yaml list "%{_path}%.description" from {_file} ? "Описание отсутствует"
+  
+  set {_modelData} to yaml value "%{_path}%.modelData" from {_file}
+  if {_modelData} is not set:
+    broadcast "&c[Furniture] &fОшибка загрузки мебели %{_id}% &7(Файл: %{_file}%) &fотсутствует поле modelData"
+    stop
+
+  set {_dimensions::height} to yaml value "%{_path}%.dimensions.height" from {_file} ? 1
+  set {_dimensions::width} to yaml value "%{_path}%.dimensions.width" from {_file} ? 1
+  
+  if {_dimensions::height} or {_dimensions::width} is not a number:
+    broadcast "&c[Furniture] &fОшибка загрузки мебели %{_id}% &7(Файл: %{_file}%) &fполе dimensions настроенно некорректно."
+    stop 
+
+  set {_traits::*} to yaml list "%{_path}%.traits" from {_file}
+  if size of {_traits::*} > 0:
+    loop {_traits::*}:
+      if FurnitureShop_getAvailableTraits() doesn't contain loop-value:
+        broadcast "&c[Furniture] &fОшибка загрузки мебели %{_id}% &7(Файл: %{_file}%) &fнеизвестное поведение объекта: %loop-value% &7(Доступные значения: %FurnitureShop_getAvailableTraits()%)"
+        stop
+
+  # Updating item info
+  set {furniture::item::%{_id}%} to true
+  set {furniture::item::%{_id}%::name} to {_name}
+  set {furniture::item::%{_id}%::description::*} to {_description::*}
+  
+  set {furniture::item::%{_id}%::modelData} to {_modelData}
+  set {furniture::item::%{_id}%::dimensions} to "%{_dimensions::height}%x%{_dimensions::width}%"
+  set {furniture::item::%{_id}%::traits::*} to {_traits::*}
+
+  broadcast "&a[Furniture] &fЗагружена мебель %{_id}% &7(Файл: %{_file}%, modelData: %{_modelData}%, dimensions: %{_dimensions::height}%x%{_dimensions::width}%, traits: %{_traits::*}%)"
+  add {_id} to {furniture::item::loaded::*}

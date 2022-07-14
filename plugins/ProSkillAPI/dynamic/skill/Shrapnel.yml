@@ -1,0 +1,219 @@
+Shrapnel: 
+  name: 'Shrapnel'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '-2'
+    mana-base: '10'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 1
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Count: {attr:projectile.amount}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Location-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            range-base: '10'
+            range-scale: '0'
+            entities: 'True'
+            fluids: 'False'
+            passable: 'False'
+            center: 'False'
+            group: 'enemy'
+            wall: 'false'
+            caster: 'false'
+          children: 
+            Ceiling-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                distance-base: '6'
+                distance-scale: '0'
+                at-least: 'True'
+              children: 
+                Item Projectile-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'projectile'
+                    counts: 'True'
+                    group: 'Enemy'
+                    material: 'Tnt'
+                    amount: '1'
+                    byte: '0'
+                    hide-flags: 
+                    - ' '
+                    - '{'
+                    - '}'
+                    custom: 'False'
+                    velocity-base: '-0.1'
+                    velocity-scale: '0'
+                    lifespan-base: '5'
+                    lifespan-scale: '0'
+                    spread: 'Rain'
+                    amount-base: '5'
+                    amount-scale: '1'
+                    height-base: '6'
+                    height-scale: '0'
+                    rain-radius-base: '2'
+                    rain-radius-scale: '0'
+                    forward-base: '0'
+                    forward-scale: '0'
+                    upward-base: '0.5'
+                    upward-scale: '0'
+                    right-base: '0'
+                    right-scale: '0'
+                    use-effect: 'True'
+                    effect-key: 'default'
+                    duration-base: '1'
+                    duration-scale: '0'
+                    -shape: 'single'
+                    -shape-dir: 'XY'
+                    -shape-size: '1'
+                    -animation: 'linear'
+                    -anim-dir: 'XZ'
+                    -anim-size: '1'
+                    -interval: '1'
+                    -view-range: '25'
+                    -particle-type: 'Smoke normal'
+                    -particle-material: 'Dirt'
+                    -particle-durability: '0'
+                    -particle-data: '0'
+                    -particle-amount: '1'
+                    -particle-dx: '0'
+                    -particle-dy: '0'
+                    -particle-dz: '0'
+                    -particle-speed: '0.01'
+                    -initial-rotation: '0'
+                    -with-rotation: 'True'
+                  children: 
+                    Area-e: 
+                      type: 'target'
+                      indicator: 'None'
+                      data: 
+                        icon-key: 'area'
+                        radius-base: '2'
+                        radius-scale: '0'
+                        group: 'Enemy'
+                        wall: 'False'
+                        caster: 'In area'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                      children: 
+                        Damage-f: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'damage'
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '4'
+                            value-scale: '0'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                    Particle-g: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        particle: 'Smoke large'
+                        arrangement: 'Sphere'
+                        radius-base: '0.8'
+                        radius-scale: '0'
+                        particles-base: '15'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '1'
+                        speed: '0.1'
+                        forward: '0'
+                        upward: '0'
+                        right: '0'
+                      children:  {}
+                    Sound-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Entity generic explode'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1'
+                        pitch-scale: '0'
+                      children:  {}
+                Sound-i: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    sound: 'Entity firework rocket launch'
+                    volume-base: '100'
+                    volume-scale: '0'
+                    pitch-base: '0.5'
+                    pitch-scale: '0'
+                  children:  {}
+            Else-j: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+              children: 
+                Self-k: 
+                  type: 'target'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    group: 'enemy'
+                    wall: 'false'
+                    caster: 'false'
+                  children: 
+                    Message-l: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'False'
+                        message: '&cНад противником недостаточно пространства!'
+                      children:  {}

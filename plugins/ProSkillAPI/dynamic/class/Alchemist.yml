@@ -1,0 +1,38 @@
+Alchemist: 
+  name: 'Alchemist'
+  action-bar: ''
+  prefix: '&2Алхимик'
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 41
+  parent: 'Hunter'
+  needs-permission: 'false'
+  attributes: 
+    health-base: '10'
+    health-scale: '1'
+    mana-base: '1'
+    mana-scale: '7'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 2.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Mage Boost'
+  - 'Mage Bow'
+  - 'Fire Arrow'
+  - 'Elemental Arrow'
+  icon: 'SUGAR'
+  icon-data: 0
+  icon-durability: 0
+  icon-lore: 
+  - '&dАлхимик...'
+  exp-source: 273

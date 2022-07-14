@@ -1,0 +1,20 @@
+function FurnitureShop_BuyItemHologram_getText(shopId: string, shopItemId: string) :: strings:
+  # Getting item information
+  set {_itemId} to {furniture::shop::%{_shopId}%::item::%{_shopItemId}%::itemId}
+  if {_itemId} is not set:
+    return "&cx" and "Неизвестный предмет"
+
+  # Getting item info
+  set {_name} to {furniture::item::%{_itemId}%::name}
+
+  # Getting item price
+  set {_price} to {furniture::shop::%{_shopId}%::item::%{_shopItemId}%::price}
+
+  # Parsing traits
+  set {_traitsText} to ""
+
+  set {_traits::*} to {furniture::item::%{_itemId}%::traits::*}
+  loop {_traits::*}:
+    set {_traitsText} to "%{_traitsText}% %FurnitureShop_getTraitText(loop-value)%"
+
+  return "%{_name}%", {_traitsText} and "Цена: &7%{_price}%"

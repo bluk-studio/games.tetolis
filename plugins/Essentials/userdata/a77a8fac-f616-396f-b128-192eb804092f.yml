@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 178.120.64.94
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1646677580798
+  login: 1646672782911
+money: '0'
+last-account-name: samuray_play
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 137.02611471720317
+  y: 39.77028416984834
+  z: 10.260586940122291
+  yaw: 43.52001953125
+  pitch: 51.74964141845703
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 8.300000011920929
+  y: -3.0
+  z: -244.30000001192093
+  yaw: -133.728759765625
+  pitch: 18.000030517578125

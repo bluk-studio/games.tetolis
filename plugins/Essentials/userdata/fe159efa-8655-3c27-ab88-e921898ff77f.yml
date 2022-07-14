@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 5.142.157.79
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1653151493498
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1653151500693
+  login: 1653147517259
+money: '0'
+last-account-name: Well_28012
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 82.55557114504437
+  y: 6.2568314084943175
+  z: -300.69999998807907
+  yaw: 116.5946044921875
+  pitch: 18.033533096313477
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 17.55574200672957
+  y: 2.744469760154656
+  z: -255.2279280481985
+  yaw: -13.385749816894531
+  pitch: 47.29656982421875

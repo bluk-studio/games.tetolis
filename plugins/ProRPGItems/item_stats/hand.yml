@@ -1,0 +1,9 @@
+ONE:
+  enabled: true
+  name: '&fОдноручный'
+  format: '&7Рука: &f%name%'
+
+TWO:
+  enabled: true
+  name: '&eДвуручный'
+  format: '&7Рука: &f%name%'

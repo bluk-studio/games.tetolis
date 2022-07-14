@@ -1,0 +1,105 @@
+options:
+  inventory_prefix: 
+
+  information_button_slots: 2,3,4,5,6, 11,12,13,14,15
+  yes_button_slots: 28,29,30, 37,38,39 
+  no_button_slots: 32,33,34, 41,42,43
+
+function RentableArea_RentAreaMenu_open(player: player):
+  open chest inventory with 6 rows named "&f{@inventory_prefix}" to {_player}
+
+  # Information
+  set {_slots::*} to {@information_button_slots}
+  set {_item} to paper named "Информация о аренде" with nbt "{CustomModelData:2}"
+
+  set slot {_slots::*} of {_player}'s current inventory to {_item}
+
+  # Yes button
+  set {_slots::*} to {@yes_button_slots}
+  set {_item} to paper named "Да, арендовать" with nbt "{CustomModelData:2}"
+
+  set slot {_slots::*} of {_player}'s current inventory to {_item}
+
+  # No button
+  set {_slots::*} to {@no_button_slots}
+  set {_item} to paper named "Нет, закрыть меню" with nbt "{CustomModelData:2}"
+
+  set slot {_slots::*} of {_player}'s current inventory to {_item}
+
+function RentableArea_RentAreaMenu_callButtonAction(player: player, buttonId: string):
+  # Buy
+  if {_buttonId} is "buy":
+    # Getting information about current region
+    set {_areaId} to {area::%{_player}%::currentlyInArea}
+    {_areaId} is not set:
+      close {_player}'s inventory
+
+      # Sending error information
+      send title "&cОшибка" with subtitle "&fВы не находитесь в помещении для аренды" to {_player}
+
+      stop
+
+    set {_owner} to RentableAreas_Data_getOwner({_areaId})
+    if {_owner} is set:
+      close {_player}'s inventory
+
+      # Sending error information
+      send title "&cОшибка" with subtitle "&fЭто помещение уже кем-то арендуется" to {_player}
+
+      stop
+
+    # Checking if we can rent this place
+    set {_money::needed} to {area::%{_areaId}%::price}
+
+    if {_player}'s money > {_money::needed}:
+      # Reducing player's money (+todo notification?)
+      reduce {_player}'s money by {_money::needed}
+
+      # Renting this place
+      RentableAreas_Data_setOwner({_areaId}, {_player})
+
+      # Getting 
+      set {_rentTime} to {area::%{_areaId}%::rentTime}
+      
+      set {_now} to now
+      add {_rentTime} to {_now}
+
+      RentableAreas_Data_setRentTo({_areaId}, {_now})
+
+      delete {area::%{_player}%::boundNotification::%{_areaId}%}
+      close {_player}'s inventory
+
+      # Sending notification
+      RentableAreas_sendNotification({_player}, diamond, "Нажмите &e[F] &fчто бы перейти в настройки помещения.")
+
+  # Close
+  else if {_buttonId} is "close":
+    close {_player}'s inventory
+
+command delrent [<text>]:
+  trigger:
+    RentableAreas_Data_deleteOwner(arg-1)
+    RentableAreas_Data_deleteRentTo(arg-1)
+
+# Event listener
+on inventory click:
+  if name of player's current inventory contains "{@inventory_prefix}":
+    cancel event
+
+    set {_buttons::*} to "buy={@yes_button_slots}" and "close={@no_button_slots}"
+    loop {_buttons::*}:
+      delete {_slots::*}
+      set {_temp::*} to loop-value split at "="
+      
+      set {_buttonId} to {_temp::1}
+      set {_slots::unprepared::*} to {_temp::2} split at ","
+      loop {_slots::unprepared::*}:
+        set {_number} to loop-value-2
+        replace all " " in {_number} with ""
+        add "%{_number}%" parsed as number to {_slots::*}
+
+      if {_slots::*} contains index of clicked slot:
+        # Calling button action
+        RentableArea_RentAreaMenu_callButtonAction(player, {_buttonId})
+
+        stop

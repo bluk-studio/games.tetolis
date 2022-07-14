@@ -1,0 +1,19 @@
+function FurnitureShop_getLocation(x: number, y: number, z: number) :: location:
+  set {_location} to location at 0, 0, 0 in world "world"
+
+  set {_location}'s x coordinate to {_x}
+  set {_location}'s y coordinate to {_y}
+  set {_location}'s z coordinate to {_z}
+
+  return {_location}
+
+function FurnitureShop_getLocationFromString(location: string) :: location:
+  replace all " " in {_location} with ""
+  
+  set {_temp::*} to {_location} split at ","
+  if size of {_temp::*} == 3:
+    set {_x} to {_temp::1} parsed as number
+    set {_y} to {_temp::2} parsed as number
+    set {_z} to {_temp::3} parsed as number
+
+    return FurnitureShop_getLocation({_x}, {_y}, {_z})

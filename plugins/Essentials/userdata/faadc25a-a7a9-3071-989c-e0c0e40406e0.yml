@@ -1,0 +1,51 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 176.59.123.188
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1655925469879
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655928509169
+  login: 1655923552383
+  kits:
+    tools: 1655924971889
+    dtools: 1655924991129
+    color: 1655925012540
+money: '0'
+last-account-name: MrholsYT
+lastlocation:
+  world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+  world-name: house
+  x: -1287.2555808496775
+  y: 42.0
+  z: -230.21628355709376
+  yaw: -0.9251708984375
+  pitch: 8.202027320861816
+homes:
+  __:
+    world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+    world-name: world
+    x: 437.87314928194246
+    y: 40.0
+    z: -298.04205298740976
+    yaw: 133.33819580078125
+    pitch: 15.719635009765625
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 60.22312852842862
+  y: -4.0
+  z: -252.49639208691087
+  yaw: 90.2998046875
+  pitch: 12.477785110473633

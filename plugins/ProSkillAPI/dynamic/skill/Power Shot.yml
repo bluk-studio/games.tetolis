@@ -1,0 +1,217 @@
+Power Shot: 
+  name: 'Power Shot'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 0
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '12'
+    cooldown-scale: '0'
+    mana-base: '25'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 4
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Range: {attr:projectile.lifespan}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Ground-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            type: 'On Ground'
+          children: 
+            Inventory-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                amount-base: '3'
+                amount-scale: '0'
+                check-mat: 'True'
+                material: 'Arrow'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children: 
+                Sound-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    sound: 'Block beacon activate'
+                    volume-base: '100'
+                    volume-scale: '0'
+                    pitch-base: '1'
+                    pitch-scale: '0'
+                  children:  {}
+                Channel-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    still: 'True'
+                    time-base: '2'
+                    time-scale: '0'
+                  children: 
+                    Particle Projectile-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: 'projectile'
+                        counts: 'True'
+                        gravity: '0'
+                        pierce: 'True'
+                        group: 'Enemy'
+                        velocity-base: '0.8'
+                        velocity-scale: '0'
+                        lifespan-base: '1'
+                        lifespan-scale: '0.1'
+                        spread: 'Cone'
+                        amount-base: '1'
+                        amount-scale: '0'
+                        angle-base: '0'
+                        angle-scale: '0'
+                        forward-base: '0'
+                        forward-scale: '0'
+                        upward-base: '0.5'
+                        upward-scale: '0'
+                        right-base: '0'
+                        right-scale: '0'
+                        particle: 'Redstone'
+                        dust-color: '#33ff33'
+                        dust-size: '1'
+                        arrangement: 'Sphere'
+                        radius-base: '0.5'
+                        radius-scale: '0'
+                        particles-base: '20'
+                        particles-scale: '0'
+                        visible-radius: '25'
+                        dx: '0'
+                        dy: '0'
+                        dz: '0'
+                        amount: '0'
+                        speed: '1'
+                        frequency: '0.05'
+                        use-effect: 'True'
+                        effect-key: 'default'
+                        duration-base: '0.5'
+                        duration-scale: '0'
+                        -shape: 'linear'
+                        -shape-dir: 'XY'
+                        -shape-size: '1'
+                        -animation: 'three-spiral'
+                        -anim-dir: 'XZ'
+                        -anim-size: '1'
+                        -interval: '1'
+                        -view-range: '25'
+                        -particle-type: 'End rod'
+                        -particle-material: 'Dirt'
+                        -particle-durability: '0'
+                        -particle-data: '0'
+                        -particle-amount: '1'
+                        -particle-dx: '0'
+                        -particle-dy: '0'
+                        -particle-dz: '0'
+                        -particle-speed: '0'
+                        -initial-rotation: '0'
+                        -with-rotation: 'True'
+                      children: 
+                        Damage-g: 
+                          type: 'mechanic'
+                          indicator: 'None'
+                          data: 
+                            icon-key: 'damage'
+                            counts: 'True'
+                            type: 'Damage'
+                            value-base: '15'
+                            value-scale: '2'
+                            true: 'False'
+                            classifier: 'default'
+                            knockback: 'True'
+                          children:  {}
+                    Sound-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        sound: 'Block beacon power select'
+                        volume-base: '100'
+                        volume-scale: '0'
+                        pitch-base: '1'
+                        pitch-scale: '0'
+                      children:  {}
+                    Item Remove-i: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        amount-base: '3'
+                        amount-scale: '0'
+                        check-mat: 'True'
+                        material: 'Arrow'
+                        check-data: 'False'
+                        check-lore: 'False'
+                        check-name: 'False'
+                        regex: 'False'
+                      children:  {}
+            Else-j: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+              children: 
+                Message-k: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    message: '&cДля использования навыка необходимо иметь 3 стрелы!'
+                  children:  {}
+        Else-l: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-m: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо стоять на земле!'
+              children:  {}

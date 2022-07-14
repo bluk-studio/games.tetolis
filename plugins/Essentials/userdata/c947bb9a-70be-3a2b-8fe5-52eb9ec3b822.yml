@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 37.145.81.144
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1655665653940
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655677583501
+  login: 1655677492550
+money: '0'
+last-account-name: AyperReal
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 950.6174423719805
+  y: 32.74918707874468
+  z: -208.1659299763556
+  yaw: 12.31365966796875
+  pitch: 19.290197372436523
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 939.9514724947367
+  y: 23.0
+  z: -190.97833455277234
+  yaw: -17.87640380859375
+  pitch: -29.099233627319336

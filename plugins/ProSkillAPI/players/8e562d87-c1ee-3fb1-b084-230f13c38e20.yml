@@ -1,0 +1,28 @@
+limit: 3
+active: 1
+health: 20.0
+mana: 210.0
+accounts: 
+  acc1: 
+    classes:  {}
+    skills:  {}
+    binds:  {}
+    bar: 
+      enabled: 'true'
+      slots: 
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      Zero Trap: 1
+      Smoke: 2
+      Dart: 3
+    combos:  {}
+    attrib-points: 40
+    attribs:  {}
+    hover:  {}
+    instant:  {}
+    hunger: 1.0
+    extra: 
+      combatItems: '9;'

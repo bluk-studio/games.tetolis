@@ -1,0 +1,21 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.6.2
+
+furniture::item::nested.furniture.testid, boolean, 01
+furniture::item::nested.furniture.testid::description::1, string, 8021D0A2D0B5D181D182D0BED0B2D0BED0B520D0BED0BFD0B8D181D0B0D0BDD0B8D0B5
+furniture::item::nested.furniture.testid::dimensions, string, 8003317832
+furniture::item::nested.furniture.testid::modeldata, integer, 00000001
+furniture::item::nested.furniture.testid::name, string, 801DD09AD180D183D182D0BED0B520D0BDD0B0D0B7D0B2D0B0D0BDD0B8D0B5
+furniture::item::nested.furniture.testid::traits::1, string, 800A69735369747461626C65
+furniture::item::nested.furniture.testid::traits::2, string, 8009697353746F72616765
+furniture::shop::nested.shopid, boolean, 01
+furniture::shop::nested.shopid::bounds::1, string, 801B6675726E69747572652D6E65737465642E73686F7049642D353431
+furniture::shop::nested.shopid::bounds::2, string, 801B6675726E69747572652D6E65737465642E73686F7049642D363135
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.yeahid::hologramlocation, location, 8605776F726C6480FF0000000181046E616D65208005776F726C64017809BFF80000000000000179094045000000000000017A09C069B000000000000570697463680800000000037961770800000000
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.yeahid::itemid, string, 80176E65737465642E6675726E69747572652E746573744964
+furniture::shop::nested.shopid::item::nested.shopid.items.nested.yeahid::price, integer, 00000078
+furniture::shop::nested.shopid::items::1, string, 80216E65737465642E73686F7049642E6974656D732E6E65737465642E796561684964
+temp::dogleash::currentlyatshop, string, 800D6E65737465642E73686F704964
+

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 88.135.126.34
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1645714252407
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1645714334369
+  login: 1645714138171
+money: '0'
+last-account-name: xolod4ek
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 18.61502966636881
+  y: 12.876142363252107
+  z: -179.62650264362478
+  yaw: 168.26116943359375
+  pitch: 14.238923072814941
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 19.050834932805408
+  y: 10.74313548392375
+  z: -171.09466750068168
+  yaw: -15.7711181640625
+  pitch: 20.956924438476562

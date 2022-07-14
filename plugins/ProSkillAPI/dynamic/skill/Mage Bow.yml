@@ -1,0 +1,147 @@
+Mage Bow: 
+  name: 'Mage Bow'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '15'
+    cooldown-scale: '0'
+    mana-base: '25'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 17
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Inventory-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            amount-base: '2'
+            amount-scale: '0'
+            check-mat: 'True'
+            material: 'Arrow'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children: 
+            Particle Projectile-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'True'
+                gravity: '0'
+                pierce: 'False'
+                group: 'Enemy'
+                velocity-base: '3'
+                velocity-scale: '0'
+                lifespan-base: '0.4'
+                lifespan-scale: '0'
+                spread: 'Cone'
+                amount-base: '1'
+                amount-scale: '0'
+                angle-base: '30'
+                angle-scale: '0'
+                forward-base: '0'
+                forward-scale: '0'
+                upward-base: '1.2'
+                upward-scale: '0'
+                right-base: '0'
+                right-scale: '0'
+                particle: 'Redstone'
+                dust-color: '#1289c9'
+                dust-size: '1.5'
+                arrangement: 'Sphere'
+                radius-base: '0.5'
+                radius-scale: '0'
+                particles-base: '5'
+                particles-scale: '0'
+                visible-radius: '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                frequency: '0.05'
+                use-effect: 'False'
+              children: 
+                Damage-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: 'damage'
+                    counts: 'True'
+                    type: 'Damage'
+                    value-base: '7'
+                    value-scale: '1'
+                    true: 'False'
+                    classifier: 'default'
+                    knockback: 'True'
+                  children:  {}
+                Particle-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Smoke normal'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    radius-base: '0.3'
+                    radius-scale: '0'
+                    particles-base: '20'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '0.05'
+                    forward: '0'
+                    upward: '1'
+                    right: '0'
+                  children:  {}
+        Else-f: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+          children: 
+            Message-g: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                counts: 'False'
+                message: '&cДля использования навыка необходимо иметь 2 стрелы!'
+              children:  {}

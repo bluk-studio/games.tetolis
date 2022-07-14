@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 195.5.26.131
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1655493107772
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655493427408
+  login: 1655492637890
+money: '0'
+last-account-name: Dazai_Osamu_Ash
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 117.45186019422853
+  y: 14.930671269368538
+  z: -239.55086105213948
+  yaw: -107.09832763671875
+  pitch: 41.427913665771484
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 375.6104303095918
+  y: 142.3814500307449
+  z: -494.56142350470634
+  yaw: 173.8675994873047
+  pitch: 50.89822769165039

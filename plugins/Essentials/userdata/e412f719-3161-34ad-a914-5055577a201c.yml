@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 85.140.0.95
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1655928226650
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1655930099380
+  login: 1655923545967
+money: '0'
+last-account-name: Jailor
+lastlocation:
+  world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+  world-name: house
+  x: -737.1904579974014
+  y: 64.67979047069622
+  z: -215.57404490086654
+  yaw: 87.96044921875
+  pitch: 26.55197525024414
+logoutlocation:
+  world: 0fcf9b96-5d1b-45dc-b530-b7b06a402d67
+  world-name: house
+  x: -906.2114766611159
+  y: 45.61592105228575
+  z: -193.76559305691023
+  yaw: -113.635498046875
+  pitch: 16.809999465942383

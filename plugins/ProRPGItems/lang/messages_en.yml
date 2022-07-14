@@ -1,0 +1,556 @@
+Command:
+  Modify:
+    List:
+    - '{message: ~prefix: false;}&8&m-----------&8&l[ &aQuantum RPG &7- &aИзменить &8&l]&8&m-----------'
+    - '&2> &a/qrpg modify name <название> &7- Переименовать показываемое имя у предмета.'
+    - '&2> &a/qrpg modify lore add [текст] [линия] &7- Добавить линию лора.'
+    - '&2> &a/qrpg modify lore del [линия] &7- Удалить линию лора.'
+    - '&2> &a/qrpg modify lore clear &7- Очистить лор у предмета.'
+    - '&2> &a/qrpg modify flag add <флаг> &7- Добавить флаг предмету.'
+    - '&2> &a/qrpg modify flag del <флаг> &7- Удалить флаг у предмета.'
+    - '&2> &a/qrpg modify enchant <чар> <уровень> &7- Добавить/снять чары у предмета.'
+    - '&2> &a/qrpg modify potion <эффект> <уровень> <длительность> [ambient(true/false)]
+      [particles(true/false)] [icon(true/false)] &7- Изменить эффект зелья.'
+    - '&2> &a/qrpg modify color <r,g,b> &7- Поменять цвет кожанки или зелья.'
+    Desc: Изменить предмет.
+    Done: Сделано!
+  Set:
+    List:
+    - '{message: ~prefix: false;}&8&m-----------&8&l[ &aQuantum RPG &7- &aАтрибут &8&l]&8&m-----------'
+    - '&2> &a/qrpg set stat <тип> <значение> [позиция] &7- Дать атрибут предмету.'
+    - '&2> &a/qrpg set level <число> [позиция] &7- Поставить требование к уровню у предмета.'
+    - '&2> &a/qrpg set class <класс> [позиция] &7- Поставить требование к классу у предмета.'
+    - '&2> &a/qrpg set damage <тип> <мин.> <макс.> [позиция] &7- Установить тип урона предмету.'
+    - '&2> &a/qrpg set defense <тип> <значение> [позиция] &7- Установить тип защиты предмету.'
+    - '&2> &a/qrpg set ammo <тип> [позиция] &7- Установить тип снаряда у лука.'
+    - '&2> &a/qrpg set hand <тип> [позиция] &7- Двуручный/одноручный предмет.'
+    - '&2> &a/qrpg set socket <тип> [позиция] &7- Добавить сокет предмету.'
+  Buff:
+    Desc: Временно увеличивает определенный атрибут выбранному игроку.
+    Usage: <игрок> <тип> <айди> <кол-во> <длительность>
+    Done: Выдан &a%amount% %stat%&7 бафф для &a%player%&7 на &a%time%&7!
+    Get: Вы получили &a%amount% %stat%&7 бафф на &a%time%&7!
+Module:
+  Cmd:
+    List:
+      Usage: '[страница]'
+      Desc: Список предметов из модуля.
+      Format:
+        List:
+        - '{message: ~prefix: false;}'
+        - '&8&m-------- &e Список из модуля "%module%" &8&m--------'
+        - '&6%pos%. &e%item% %button_get%'
+        - '&8&m-------- &e Страница &7%page% &e из &7 %pages% &8&m--------'
+      Button:
+        Get:
+          Name: '&a&l[Get Item]'
+          Hint: '&7GВыдает предмет в инвентарь.'
+    Get:
+      Done: Вы получили &ax%amount% &a%item%&7!
+      Usage: <айди> [уровень] [кол-во]
+      Desc: Получить предмет из модуля.
+    Give:
+      Done: Вы выдали &ax%amount% &a%item%&7 для &a%player%&7!
+      Usage: <игрок> <айди> [уровень] [кол-во]
+      Desc: Выдать предмет из модуля выбранному игроку.
+    Drop:
+      Usage: <мир> <x> <y> <z> <айди> [уровень] [кол-во]
+      Desc: Создаёт выбранный предмет в определенных координатах мира.
+      Done: Вы создали &ax%amount% &a%item%&7 на координатах &a%w%&7, %x%&7, &a%y%&7, &a%z%&7!
+    Help:
+      Format: '&2> &a/%cmd% %label% %usage% &7- %desc%'
+    Usage: '&cИспользование: &f/%cmd% %label% %usage%'
+    Reload: Модуль &a%module% &7перезагружен!
+  Socketing:
+    Cmd:
+      Merchant:
+        Desc: Open Merchant Socketing GUI.
+        Usage: '[player] [force(true/false)]'
+  Item:
+    Usage:
+      Cooldown: '&cВы должны подождать &e%time%&c перед использованием &f%item% &cснова!'
+      Broken: Ваш предмет сломан! Вы не можете его использовать!
+      NoCharges: '&e%item% &cостался без снарядов! Следует провести перезарядку!'
+    Apply:
+      Error:
+        Level: '&e%source% &cиспользуется только на предметы с уровнем &e%value%&c!'
+        Type: '&e%source% &cиспользуется только на определенные предметы: &e%value%&c!'
+        Module: '&e%source% &cиспользуется только на определенные предметы: &e%value%&c!'
+        Socket: '&e%target% &cне имеет свободного &e%socket%&c!'
+        Tier: '&e%source% &cиспользуется только на &e%tier% &cпредметы!'
+    Interact:
+      Error:
+        Level: '&cВаш уровень не соответствует уровню %item%&c.'
+        Class: '&cВаш класс не соответствует классу %item%&c.'
+        Soulbound: '&cYou must set &eSoulbound &cto use %item%! Do &eRight-Click &con
+          &e%item%&c in opened inventory.'
+        Owner: '&e%item% &cbounds to &e%owner%&c. You can not use it.'
+        Hand: Ваше оружие двуручное! Нельзя держать предметы в второстепенной руке!
+        Creative: '&cПожалуйста, выйдите из &eкреативного &cрежима игры.'
+    Socketing:
+      Merchant:
+        Error:
+          TooExpensive: '&cВы не можете позволить себе эту операцию!'
+        Notify:
+          Pay: Вы заплатили &e$%amount%&7 for socketing services.
+      Error:
+        InAction: '&cYou can not socket items during active actions.'
+        AlreadyHave: '&e%item% &calready have this item socketed.'
+      Result:
+        Total:
+        - '{message: ~prefix: false;}&6&m                   &e&l[&e Socketing Result
+          &6&l]&6&m                   &r'
+        - '&7'
+        - '&6Items Used:'
+        - '&e▸ %state-target% %item-target%'
+        - '&e▸ %state-source% %item-source%'
+        - '&7'
+        State:
+          Success: '&a(Success) &f'
+          Destroyed: '&c(Destroyed) &f'
+          Wiped: '&d(Corrupted) &f'
+          Consumed: '&9(Consumed) &f'
+          Saved: '&d(Saved) &f'
+CombatLog:
+  Cmd:
+    Log:
+      Desc: Посмотреть историю последнего боя.
+Consumables:
+  Consume:
+    Error:
+      FoodLevel: '&cВы не можете потребить &e%item% &cтак как вы не голодны.'
+      HealthLevel: '&cВы не можете использовать &e%item% &cтак как ваше здоровье впорядке.'
+Dismantle:
+  Cmd:
+    Open:
+      Desc: Открыть GUI разборки.
+      Usage: '[игрок] [force<true/false>]'
+      Done:
+        Others: Открыто GUI разборки для &a%player%&7.
+  Dismantle:
+    Error:
+      TooExpensive: '&cВы не можете позволить себе эту операцию! Вам требуется: &e$%cost%, &cваш счёт: &e$%balance%'
+    Single:
+      Free: '&a%item%&7 разобран!'
+      Paid: '&a%item%&7 разобран за &a$%cost%!'
+    Many:
+      Free: Предметы разобраны!
+      Paid: Предметы разобраны за &a$%cost%&7!
+Extractor:
+  Cmd:
+    Open:
+      Desc: Открыть GUI экстрактора.
+      Usage: '[игрок] [force(true/false)]'
+      Done:
+        Others: Открыт экстратор для &a%player%&7.
+  Extract:
+    Complete: '[TITLES] &a&lЭкстракция проведена успешно!'
+    Error:
+      TooExpensive: '&cВы должны иметь &e$%cost% &cдля проведения экстракции! Ваш баланс: &e$%balance%&c.'
+  Open:
+    Error:
+      NoSockets: '&e%item% &cне имеет ничего для экстракции!'
+Fortify:
+  Cmd:
+    Fortify:
+      Usage: <item> <level>
+      Desc: Укрепляет предмет выбранным камнем.
+      Error:
+        Stone: Неверный камень укрепления!
+    Unfortify:
+      Desc: Убирает эффект укрепления у предмета.
+  Fortify:
+    Done: Предмет укреплён!
+    Error:
+      Already: Предмет уже укреплён!
+  Enchanting:
+    Failure: Камень укрепления не смог защитить &c%item%&7.
+    Success: Камень укрепления успешно защищает &a%item%&7!
+Identify:
+  Cmd:
+    Identify:
+      Desc: Изучить предмет в руке.
+      Error:
+        Item: Вы должны держать &cнеизученный предмет&7.
+  Identify:
+    Success: 'Предмет изучен: &a%item%&7!'
+    Error:
+      Tome: '&clОй-ой! &7Этот &cТом Эрудиции &7не может изучить данный предмет.'
+  Usage:
+    Error:
+      Unidentified: Вы не можете использовать неизученный предмет!
+Loot:
+  Box:
+    Error:
+      NotOwner: Вы не обладаете этой добычей.
+      Locked: Кто-то добывает уже это...
+    Owner:
+      None: Свободно
+  Party:
+    Roll:
+      Notify:
+        List:
+        - '{message: ~prefix: false;}&8&m-----------&8&l[ &e&lRoll The Dice &8&l]&8&m-----------'
+        - '              &7Item: &a%item%&7!'
+        - '                      %roll%'
+        - '&8&m-----------&8&l[ &8&m-------------&8&l ]&8&m-----------'
+        Roll:
+          Name: '&a&l[Roll!]'
+          Hint: '&aClick me to roll the dice!'
+      MemberRoll: '%player% rolled the dice: &e%value%&7.'
+      AlreadyRoll: 'You''ve already rolled the dice. Your value: &e%value%&7.'
+      RollIn: 'Roll-dice time: &e%time% seconds&7.'
+      NoRoll: No one rolled the dice.
+      Winner: '&a%player% &7obtained the right to possession &a%item%&7.'
+      NotOwner: You're not obtain this item.
+      AlreadyStarted: Your party already rolling the item.
+MagicDust:
+  Cmd:
+    Open:
+      Desc: Open Magic Dust GUI.
+      Usage: '[player] [force(true/false)]'
+      Done:
+        Others: Opened Dust GUI for &a%player%&7.
+  Apply:
+    Done: '&aSuccess! &7New &f%item% &7success rate: &a%rate-new%%&7!'
+    Error:
+      MaxRate: '&e%source% &ccould not add more than &e%max-rate%%&c!'
+  GUI:
+    Error:
+      TooExpensive: '&cYou could not pay for this operation! Required: &e$%cost%&c,
+        you have: &e$%balance%&c.'
+      InvalidItem: '&e%item% &cis not a valid item for this!'
+Party:
+  Cmd:
+    Chat:
+      Desc: Включить режим чата группы.
+    Create:
+      Desc: Создать группу.
+      Usage: '[наименование]'
+    Disband:
+      Desc: Распустить группу.
+    Drop:
+      Desc: Переключить режимы выдачи дропа.
+    Exp:
+      Desc: Переключить режимы выдачи опыта.
+    Invite:
+      Desc: Пригласить игрока в группу.
+      Usage: <игрок>
+    Join:
+      Desc: Присоединиться к группе.
+      Usage: <наименование>
+    Kick:
+      Desc: Выгнать игрока с группы.
+      Usage: <игрок>
+    Leave:
+      Desc: Покинуть группу.
+    Menu:
+      Desc: Открыть меню группы.
+    Teleport:
+      Desc: Телепортироваться к участнику группы.
+      Usage: <игрок>
+    Roll:
+      Desc: Бросить кости.
+      Error:
+        Nothing: Нет нужды бросать кости.
+  Create:
+    Done: 'Создана новая группа &a%party%&7. Пригласить игроков: &a/party invite <игрок>&7.'
+    Error:
+      Exist: Группа с таким наименованием уже существует.
+  Join:
+    Done: '&7Вы присоединились к &a%party% &7группе.'
+    New: '&a%player% &7присоединился к группе.'
+  Leader:
+    Transfer: '&7Вы теперь новый лидер группы.'
+  Invite:
+    Already: Этот игрок уже приглашен в вашу группу.
+    Send: Приглашение отправлено для &e%player%&7.
+    Get: '&e%leader% &7приглашает вас в &e%party% &7группу. Напиши &e/party join %party%&7.'
+    Another: У вас нет приглашения в эту группу.
+  Leave:
+    Done: '&7Вы покинули &c%party% &7группу.'
+    Member: '&c%player% &7покинул группу.'
+    QuitGame: '&c%player% &7покинул игру.'
+    ComeBack: '&a%player% &7зашёл в игру.'
+  Disband:
+    Done: 'Группа распущена: &c%party%&7.'
+    Leader: '&c%leader% &7распустил группу.'
+  Kick:
+    You: '&c%leader% &7выгнал Вас из группы.'
+    Other: '&c%leader% &7выгнал &c%player% &7из группы.'
+    Error:
+      Self: Невозможно выгнать самого себя.
+  Error:
+    MaxPlayers: Превышен лимит игроков в группе.
+    Player:
+      AlreadyIn: '&c%player% &7уже в группе.'
+      NotIn: Игрок не в группе.
+    AlreadyIn: 'Вы уже состоите в группе! Покиньте её: &e/party leave&7.'
+    NotInParty: Вы не состоите в группе.
+    LeaderOnly: Только лидер группы может сделать это.
+    Invalid: Этой группы не существует.
+  Teleport:
+    Error:
+      Cooldown: 'Задержка телепорта: &c%time%'
+      Self: Невозможно телепортироваться к самому себе!
+    Done:
+      To: '&8*** &7Телепортация к &a%player%&7. &8***'
+      From: '&8*** &a%player% &7телепортировался к Вам. &8***'
+  Chat:
+    Toggle: 'Чат группы: &e%state%'
+  Drop:
+    Toggle: '&8*** &7Режим добычи: &e%mode% &8***'
+  Exp:
+    Toggle: '&8*** &7Режим опыта: &e%mode% &8***'
+Profiles:
+  Command:
+    Profiles:
+      Desc: Открыть меню профиля.
+  Create:
+    Error:
+      Regex: '&cИмя профиля содержит недопустимые символы!'
+      Exists: '&cПрофиль с таким именем уже существует!'
+      Maximum: '&cВы достигли максимальное &e(%amount%) &cкол-во профилей!'
+      Unexpected: '&cНеидентифицированная ошибка при создании профиля! Обратитесь к администратору.'
+    Tip:
+      Name:
+      - '{message: ~type: TITLES; ~fadeIn: 20; ~stay: -1; ~fadeOut: 20;}&b&lНовый Профиль'
+      - '&7Введите название профиля...'
+      Error:
+      - '{message: ~type: TITLES; ~fadeIn: 20; ~stay: 60; ~fadeOut: 20;}&c&lОшибка!'
+      - '&7Посмотрите детали в чате.'
+      Done: '{message: ~type: TITLES; ~fadeIn: 20; ~stay: 60; ~fadeOut: 20;}&a&lProfile Created!'
+  Switch:
+    Done: 'Профиль сменён: &a%profile%'
+Refine:
+  Cmd:
+    Refine:
+      Desc: Force refines item in your hand.
+      Usage: '[ench. stone]'
+      Done: Item refined!
+      Error:
+        Stone: Invalid enchantment stone id.
+    Downgrade:
+      Desc: Force downgrades refined item in your hand.
+      Done: Item downgraded!
+  Enchanting:
+    Error:
+      MaxLevel: '&cCould not refine &e%item%&c: Maximal level.'
+      WrongStone: '&cCould not refine &e%item%&c: Wrong Enchantment Stone. You should
+        use: &e%stone%&c.'
+    Result:
+      Total:
+      - '{message: ~prefix: false;}&6&m                   &e&l[&e Refine Result &6&l]&6&m                   &r'
+      - '&7'
+      - '&e▸ %state-target% %item-target%'
+      - '&e▸ %state-source% %item-source%'
+      - '&7'
+      State:
+        Success: '&a(Success) &f'
+        Destroyed: '&c(Destroyed) &f'
+        Downgraded: '&d(Downgraded) &f'
+        Consumed: '&9(Consumed) &f'
+        Saved: '&d(Saved) &f'
+Repair:
+  Cmd:
+    Open:
+      Desc: Open custom repair anvil GUI.
+      Usage: '[player] [force(true/false)]'
+      Done:
+        Others: Opened Anvil Repair GUI for &a%player%&7.
+  Error:
+    TypeNotSelected: '&cPlease, select the repair type!'
+    NoDurability: '&c%item% &7can not be repaired.'
+    NotDamaged: '&c%item% &7is not damaged.'
+    TooExpensive: '&cYou can''t afford the repair!'
+  Done: '&a%item% &7have been successfully repaired.'
+Sell:
+  Cmd:
+    Open:
+      Desc: Open Sell GUI.
+      Usage: '[player] [force<true/false>]'
+      Done:
+        Others: Opened Sell GUI for &a%player%&7.
+  Sell:
+    Complete: Sold for &a$%cost%&7!
+Soulbound:
+  Cmd:
+    Soul:
+      Desc: Изменяет предмету необходимость привязки владельца.
+      Usage: <добавить|убрать> [позиция]
+      Done: 'Необходимость привязки владельца: &e%state%'
+    Untradeable:
+      Desc: Изменяет предмету возможность торговли.0
+      Usage: <добавить|убрать> [позиция]
+      Done: 'Возможность торговли: &e%state%'
+  Item:
+    Soulbound:
+      Apply: '&cВладелец &eпривязан к &c%item%&e!'
+    Interact:
+      Error:
+        Pickup: '&cВы не можете подобрать предмет другого игрока.'
+        Command: '&cВы не можете использовать эту команду с необмениваемым предметом!'
+Error:
+  InvalidItem: Это действие неприменимо к этому предмету!
+  InvalidArgument: 'Неверное значение: &c%arg%&7!'
+  Internal: '&cКритическая ошибка! Сообщите администратору.'
+Other:
+  Get: 'Вы получили: &7<%item%&7>'
+PartyDropMode:
+  FREE: Свободный
+  LEADER: Лидер
+  AUTO: Авто
+  ROLL: Бросок костей
+PartyExpMode:
+  PRIVATE: Приватный
+  SHARED: Общий
+ClickType:
+  LEFT: Левый
+  RIGHT: Правый
+  MIDDLE: Средний
+  SHIFT_LEFT: Левый Шифт
+  SHIFT_RIGHT: Правый Шифт
+ClassAttributeType:
+  ARMOR: Броня
+  ARMOR_TOUGHNESS: Твёрдость брони
+  ATTACK_DAMAGE: Урон
+  ATTACK_SPEED: Скорость атаки
+  FLYING_SPEED: Скорость полёта
+  KNOCKBACK_RESISTANCE: Сопротивление отбрасыванию
+  LUCK: Удача
+  MAX_HEALTH: Максимальное здоровье
+  MOVEMENT_SPEED: Скорость
+UserEntityNamesMode:
+  DEFAULT: Обычный
+  ALWAYS_VISIBLE: Всегда видно
+  ALWAYS_HIDDEN: Всегда скрыто
+Drop:
+  Module:
+    Cmd:
+      Give:
+        Done: '&a%item%&7 выдан для &a%player%&7, &a%amount%&7 кол-во предмета выдано!'
+      Drop:
+        Give:
+          Usage: <игрок> <table_id> [уровень]
+          Desc: Выбирает рандомную таблицу добычи и выдает игроку.
+        Drop:
+          Usage: <игрок> <table_id> [уровень]
+          Desc: Выбирает рандомную таблицу добычи и спавнит под ногами игрока.
+        Invalid:
+          Table: Неверная таблица '%table%'
+Classes:
+  Cmd:
+    Select:
+      Desc: Сменить или выбрать класс.
+    Skills:
+      Desc: Настроить свои умения.
+    Aspects:
+      Desc: Настроить свои аспекты.
+    Stats:
+      Desc: Посмотреть характеристику класса.
+    AddSkill:
+      Desc: Добавить умение игроку.
+      Usage: <игрок> <умение> <уровень> [force<true/false>]
+      Done: '&aВыдано &f%skill% &aумение для &f%name%&a!'
+      Error:
+        NoSkill: '&cНеверное умение!'
+    AddExp:
+      Desc: Добавить опыт класса игроку.
+      Usage: <игрок> <кол-во>
+      Done: '&aВыдано &f%amount% &aопыта для &f%name%&a!'
+      Error:
+        NoClass: '&cИгрок не имеет класс!'
+    AddAspectPoints:
+      Desc: Добавить очки аспекта игроку.
+      Usage: <игрок> <кол-во>
+      Done: '&aВыдано &f%amount% &aочков аспекта для &f%name%&a!'
+      Error:
+        NoClass: '&cИгрок не имеет класс!'
+    AddSkillPoints:
+      Desc: Добавить очки умения игроку.
+      Usage: <игрок> <кол-во>
+      Done: '&aВыдано &f%amount% &aочков умения для &f%name%&a!'
+      Error:
+        NoClass: '&cИгрок не имеет класс!'
+    AddLevel:
+      Desc: Добавить уровень класса игроку.
+      Usage: <игрок> <кол-во>
+      Done: '&aВыдано &f%amount% &aуровней для &f%name%&a!'
+      Error:
+        NoClass: '&cИгрок не имеет класса!'
+    Cast:
+      Desc: Скастовать выбранное умение.
+      Usage: <умение> [уровень] [force(true/false)]
+      Done: '&aУмение скастовано: &f%skill%&a!'
+      Error:
+        InvalidSkill: '&cУмение не найдено!'
+    SetClass:
+      Desc: Установить класс игроку.
+      Usage: <игрок> <класс> [force<true/false>]
+      Done: '&aУстановлен &f%class% &aкласс для &f%name%&a!'
+      Error:
+        NoClass: '&cНеверный класс!'
+    Reset:
+      Desc: Сбросить данные класса игрока.
+      Usage: <игрок>
+      Done: '&7Данные класса игрока &a%player% &7успешно сброшены!'
+    ResetAspectPoints:
+      Desc: Сбросить очки аспекта игрока.
+      Usage: <игрок>
+      Done: Очки аспекта игрока &a%player% &7успешно сброшены!
+    ResetSkillPoints:
+      Desc: Сбросить очки умения игрока.
+      Usage: <игрок>
+      Done: Очки умения игрока &a%player% &7успешно сброшены!
+  Error:
+    Level:
+      World: '&cВаш уровень должен быть &e%level%+ &cдля входа в этот мир!'
+    NoClass: '&cВы должны иметь класс для этого действия!'
+  Aspect:
+    Inc:
+      Error:
+        NoPoints: У вас недостаточно очков аспекта!
+      Done: Ваш &a%aspect% &7был увеличен до значения &a%value%&7!
+  Skill:
+    Cast:
+      Error:
+        Skill:
+          Level: '&cВаш &e%skill%&c уровень умения должен быть минимум &e%lvl% &cдля каста этого умения!'
+          Learn: '&cВы должны изучить &e%skill%&c умение прежде чем его кастовать!'
+        Class: '&cВаш класс &e(%class%&e) &cне может использовать это умение!'
+        Level: '&cВаш уровень должен быть минимум &e%lvl% &cдля каста этого умения!'
+        Cooldown: '&cВы должны подождать &e%time% &cпрежде чем кастовать &e%skill%&c снова!'
+        Mana: '[ACTION_BAR]&cНедостаточно маны.'
+      Done: '[ACTION_BAR]&eПроцесс каста: &f%skill%&e...'
+      Cancel: '[ACTION_BAR]&4&lОтмена'
+    Learn:
+      Done: 'Вы изучили новое умение: &a%skill% %rlvl%'
+      Error:
+        Has: Вы уже изучили это умение!
+        TooExpensive: У вас недостаточно очков для улучшения этого умения!
+  Leveling:
+    Points:
+      Aspect:
+        Get: '{message: ~prefix: false;}&2*** &aВы получили &f%amount% Очков Аспекта&a!
+          Потратьте их - &f/class aspects &2***'
+      Skill:
+        Get: '{message: ~prefix: false;}&2*** &aВы получили &f%amount% Очков Умения&a!
+          Потратьте их - &f/class skills &2***'
+    Child:
+      Available: '{message: ~prefix: false;}&eВы открыли новый класс! Проверьте
+        пополнение - &6/class select&e.'
+    Exp:
+      Get: '{message: ~prefix: false;}&6*** &eВы получили &f%exp% &eопыт от &f%src% &6***'
+      Lost: '{message: ~prefix: false;}&4*** &cВы потеряли &f%exp% &cопыт &4***'
+    Level:
+      Up: '{message: ~prefix: false;}&6*** &eВаш уровень был повышен до &f&l%lvl%&e!
+        &6***'
+      Down: '{message: ~prefix: false;}&4*** &cВаш уровень был понижен до
+        &f&l%lvl%&c! &4***'
+  Select:
+    Error:
+      NoChildYet: '&cНовые классы все еще не открыты!'
+      NoChild: '&cВаш класс больше не может открыть новые классы!'
+      Cooldown: '&cВы должны подождать &e%time% &cдо изменения своего класса!'
+      Once: '&cВы можете выбрать только один класс для одного профиля!'
+    Done: Теперь Вы &a%class%&7!

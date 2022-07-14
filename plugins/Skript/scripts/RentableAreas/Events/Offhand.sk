@@ -1,0 +1,13 @@
+on swapping of item:
+  # Checking if player is in area
+  if {area::%player%::currentlyInArea} is set:
+    # Checking area information
+    set {_areaId} to {area::%player%::currentlyInArea}
+    set {_owner} to RentableAreas_Data_getOwner({_areaId})
+
+    if {_owner} is player:
+      # Opening area manager ui
+      RentableArea_AreaManagerMenu_open(player)
+    else:
+      {_owner} is not set
+      RentableArea_RentAreaMenu_open(player)

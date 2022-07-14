@@ -1,0 +1,135 @@
+Smoke: 
+  name: 'Smoke'
+  type: 'Активный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '30'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '5'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 13
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Работает только на игроков'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Radius: {attr:area.radius}'
+  - '&2Potion Time: {attr:potion.seconds}'
+  desc:  []
+  components: 
+    Cast: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Area-b: 
+          type: 'target'
+          indicator: 'None'
+          data: 
+            icon-key: 'area'
+            radius-base: '12'
+            radius-scale: '1'
+            group: 'Enemy'
+            wall: 'False'
+            caster: 'False'
+            max-base: '99'
+            max-scale: '0'
+            random: 'False'
+          children: 
+            Potion-c: 
+              type: 'mechanic'
+              indicator: 'None'
+              data: 
+                icon-key: 'potion'
+                counts: 'True'
+                potion: 'Blindness'
+                ambient: 'True'
+                tier-base: '1'
+                tier-scale: '0'
+                seconds-base: '5'
+                seconds-scale: '1'
+              children:  {}
+            Entity Type-d: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                types: 
+                - 'Player'
+              children: 
+                Particle-e: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    particle: 'Smoke large'
+                    arrangement: 'Sphere'
+                    radius-base: '1'
+                    radius-scale: '0'
+                    particles-base: '20'
+                    particles-scale: '0'
+                    visible-radius: '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '3'
+                    speed: '0.1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  children:  {}
+        Particle-f: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            particle: 'Smoke normal'
+            arrangement: 'Sphere'
+            radius-base: '1'
+            radius-scale: '2'
+            particles-base: '20'
+            particles-scale: '0'
+            visible-radius: '25'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '3'
+            speed: '0.2'
+            forward: '0'
+            upward: '0.5'
+            right: '0'
+          children:  {}
+        Sound-g: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            sound: 'Entity blaze shoot'
+            volume-base: '100'
+            volume-scale: '0'
+            pitch-base: '0.5'
+            pitch-scale: '0'
+          children:  {}

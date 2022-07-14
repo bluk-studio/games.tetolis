@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 80.237.90.234
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1649013360930
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1649015146969
+  login: 1649015098294
+money: '0'
+last-account-name: DanilTerl
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -69.59406666021523
+  y: 1.7429316017248817
+  z: 713.4570307631443
+  yaw: -46.81879425048828
+  pitch: 26.399917602539062
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: -110.79382732823967
+  y: 0.9998971067610151
+  z: 706.4154625813793
+  yaw: 31.92376708984375
+  pitch: -5.099935531616211

@@ -1,0 +1,135 @@
+Ghost: 
+  name: 'Ghost'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 14
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2На 3 уровне даёт регенерацию'
+  - '&2На 6 уровне даёт Скорость II'
+  - ''
+  - '&2Сбрасывает эффекты на 15'
+  - '&2секунд при вступлении в бой'
+  - '&2Cooldown: &615'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            counts: 'True'
+            seconds-base: '1'
+            seconds-scale: '0'
+          children: 
+            Combat-c: 
+              type: 'condition'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                combat: 'False'
+                seconds: '15'
+              children: 
+                Potion-d: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Invisibility'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '1.5'
+                    seconds-scale: '0'
+                  children:  {}
+                Skill Level-e: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'Ghost'
+                    min-level: '6'
+                    max-level: '6'
+                  children: 
+                    Potion-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Speed'
+                        ambient: 'True'
+                        tier-base: '2'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}
+                Else-g: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                  children: 
+                    Potion-h: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Speed'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}
+                Skill Level-i: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'undefined'
+                    min-level: '2'
+                    max-level: '99'
+                  children: 
+                    Potion-j: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Regeneration'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '1.5'
+                        seconds-scale: '0'
+                      children:  {}

@@ -1,0 +1,105 @@
+# Citizens NPC Storage
+
+last-created-npc-id: 37
+npc:
+  '30':
+    metadata:
+      cached-skin-uuid-name: vladosnf
+      cached-skin-uuid: 1f8115fb-9b56-42f7-9165-36bec0ff041a
+      nameplate-visible: 'false'
+    name: ribak
+    uuid: 66f41c2a-8b02-45fe-8188-4266dfd556b8
+    traits:
+      type: PLAYER
+      spawned: true
+      skintrait:
+        fetchDefaultSkin: true
+        signature: gZILutWyMIRNfRE7yKUB3rj5SSKAtqZmMxwVPjJFVrTtlc6blwxsQuRqxif7+q4rAudMQJyijiJcNqgHZE/UoIFixHPee50KOCsyJzdipnZZWrnZcHcPnhbHSwuzE8kekoUcp6hr+JTHRzsBji5MCfDeOH74a8IGHq1CTLv4ZJ3qxdIdSAmori8Ih4wXbvClNIb2lcF7am37/TVqGN5i4DjF6AHH7V2//uYRBSxf2g5U1oDdgUxOK7FZXS6gBSRGaTT0nZNwGB/eV0ah8LBpipi7/b7cPgYP7H184kYB4MkTGng1d8M1lMIS3tT5wRElre3f7M4i6q83EIcx8VeCZR+yiXV/302gzr+6vZXA8cFGXwJojJjyYQJXS27nwVE/xBkjT5Pj/YWfMQt+Tc3yoiMFBTM8c6TKgUuuuI3FSOOxO0tqM9wroH3LwR9jpSjYxALJ3O5SRpIujIVbmQfIcYHARyL84MyZsumPDuw4Z/gXmrRn6/77A5McPta910YuCXPFrUhKSbsTAE5amFE72iZFE0xn+y7xuIwz+7K+oJrMt8RHjLEHeBKNsAfKAhVG3CxlLPh0uePIjvVuYyR94JZgdtnOZiJPCjB39e91wQMcJOym2ndhi+VkLdChM6bAZ4Ak6mQnGyNdG1jvACnV7Yt+/SyYl4AdQ2/VyZBphuA=
+        skinName: vladosnf
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY0ODM5MDYwNDgyNywKICAicHJvZmlsZUlkIiA6ICIxZjgxMTVmYjliNTY0MmY3OTE2NTM2YmVjMGZmMDQxYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJWbGFkb3NORiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hMzEwNTdkY2MzMzU2OTM0YTk4MTQ2MjhhZjk5ODRhM2U3ZjFlNDEwOTcwNzk1ZGFhZjM4Y2U5MDc2YzAzNzYwIgogICAgfQogIH0KfQ==
+        updateSkins: false
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        randomLookDelay: 60
+        realisticlooking: false
+        randomPitchRange:
+          '0': -10.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      owner:
+        uuid: 3e4f1101-0206-3151-9b38-a6c2b51937b5
+      location:
+        bodyYaw: 19.31424
+        world: world
+        x: '115.4901'
+        y: '-3.0'
+        z: '-329.5254'
+        yaw: '19.3142'
+        pitch: '-0.1969'
+      sneak:
+        sneaking: false
+    traitnames: smoothrotationtrait,lookclose,mounttrait,inventory,sneak,skintrait,equipment,spawned,owner,scoreboardtrait,type,location
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '36':
+    metadata:
+      cached-skin-uuid: 93dec60d-9c38-4ed1-b1b8-e8798e4cbfb6
+      nameplate-visible: 'false'
+      cached-skin-uuid-name: chadowen
+    name: Проповедник
+    uuid: 86f6f407-5509-41f5-8585-3acc29c48ac6
+    traits:
+      type: PLAYER
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        randomLookDelay: 60
+        realisticlooking: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      location:
+        bodyYaw: 14.732735
+        world: world
+        x: '68.5'
+        y: '-4.0'
+        z: '-260.5'
+        yaw: '14.7327'
+        pitch: '-0.468'
+      spawned: true
+      owner:
+        uuid: 0c11d5d2-5174-3979-88ee-0ff7afc59e8e
+      skinlayers:
+        cape: false
+        hat: true
+        jacket: true
+        left-pants: true
+        left-sleeve: true
+        right-pants: true
+        right-sleeve: true
+      skintrait:
+        fetchDefaultSkin: true
+        signature: ZOXViNAfauK0/9cipJphJGKIaMGaQg3rup6gG/pX9KZPxcwpEZg8peRBCE7JrEEez7b3Rz+1CYa2BqiToYHE4EcEXCa+8L8FbS1aDOb05OJlHiE/PGdMWCoTOVg0xomJ5g1KajAJcmOWuNI216yj4qOPvRhXAMfgYH3LpaKXt0Saw2ryaBvPkF3ZF3+YtHA5/D3iqxLJClXo6GVrB0lXydSbbW+PtE42WkVgwlP+lq/2AmbGay13dKpNWULRLDk2NJFUFpnBxVfx4wixmOK1XEjlR9NYL86JYAuw4v2OWqPhVRmQcR/VxSVMrpmWnWLv3DoFKqzzJ0goYWaosgvAp4Ofl4xDJetflhOksNMs4dX1rzNgIVgqYiOXK7aIx8JsmjAR7lmW+Xd9uCidwqNLpIgUuB7DmG+8SCqcU2mq3oRsv+QF92E/wmCWQYhurtGpJra491oGigiHW5viT8wNa/KAFeyx+VfW8l50d+0eRA9uT+/cXudhPp2RBDhEfPKh94I6FnqZmtRsfzPgXdAueCAIZx4kcYG3sTmEHMtuwz+7d3I13bws1VYc4Ww4JEOpH8AuWrUwEliVCmuK0xPYedNmsLD5fjGxKYGiD8UvcK+sK4fWQmXu+DITI0bTnOahSqWLLGkhoBxdVK8p1Sv2bjN3QiIK0Yhp/TqidX+Nasw=
+        skinName: chadowen
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY1NTg5MDU2Nzc0NCwKICAicHJvZmlsZUlkIiA6ICI5M2RlYzYwZDljMzg0ZWQxYjFiOGU4Nzk4ZTRjYmZiNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJDaGFkb3dlbiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS83OTllODFjMDBkMmEyNWQzMmVjZTQ3OTE0NjY5MDViOGYwMWU5YjZmODM4OTk3MWYyNzQ3OWZmZTNjN2VmZmUyIgogICAgfQogIH0KfQ==
+        updateSkins: false
+      age:
+        age: 0
+        locked: true
+    traitnames: smoothrotationtrait,skinlayers,lookclose,mounttrait,inventory,age,skintrait,spawned,owner,scoreboardtrait,type,location
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true

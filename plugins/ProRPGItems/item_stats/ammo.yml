@@ -1,0 +1,44 @@
+ARROW:
+  enabled: true
+  name: 'Стрела'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+SNOWBALL:
+  enabled: true
+  name: 'Снежок'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+EGG:
+  enabled: true
+  name: 'Яйцо'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+FIREBALL:
+  enabled: true
+  name: 'Огненный шар'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+WITHER_SKULL:
+  enabled: true
+  name: 'Череп иссушителя'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+SHULKER_BULLET:
+  enabled: true
+  name: 'Снаряд шалкера'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+LLAMA_SPIT:
+  enabled: true
+  name: 'Плювок ламы'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+ENDER_PEARL:
+  enabled: true
+  name: 'Жемчуг края'
+  format: '&7➶ Тип Снаряда: &f%name%'
+
+EXP_POTION:
+  enabled: true
+  name: 'Зелье опыта'
+  format: '&7➶ Тип Снаряда: &f%name%'

@@ -1,0 +1,279 @@
+panels:
+  menu:
+    perm: default
+    rows: 6
+    title: '&f쇎'
+    empty: 
+    item:
+      '0':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+        lore:
+        - '&a» &fПЕРЕЙТИ'
+      '1':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+      '2':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+      '3':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '4':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '5':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '6':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '7':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '8':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '9':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+      '10':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+      '11':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: КЛАНЫ
+      '12':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '13':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '14':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '15':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '16':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '17':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДОНАТ
+      '18':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '19':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '20':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '21':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '22':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПЕТЫ
+      '23':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '24':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '25':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '26':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '27':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '28':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '29':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: АУКЦИОН
+      '30':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '31':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '32':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '33':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '34':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '35':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ПРОКАЧКА
+      '36':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '37':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '38':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '39':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '40':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '41':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '42':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '43':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '44':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '45':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '46':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '47':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ДРУЗЬЯ
+      '48':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '49':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: ТОПЫ
+      '50':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '51':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '52':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ
+      '53':
+        material: GRAY_STAINED_GLASS_PANE
+        stack: 1
+        customdata: 2
+        name: БОНУСЫ

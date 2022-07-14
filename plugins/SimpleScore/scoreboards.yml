@@ -1,0 +1,66 @@
+## Scoreboards (https://github.com/r4g3baby/SimpleScore/blob/main/src/main/resources/scoreboards.yml)
+# This is where you create your scoreboards to be displayed.
+
+# You can create a scoreboard by creating a node with the scoreboard name and
+# then specifying a default "updateTime" and a list of "titles" and "scores".
+#
+# "updateTime": the default update time in ticks (optional and defaults to 20 ticks/1 second)
+# "titles": text to display or a list of frames*
+# "scores": the score number/value followed by the text to display or a list of frames* or a
+#  map with the "conditions" (list of conditions) and "frames" (list of frames*) attributes
+# *frames: is a list of strings or list of maps with the "text" (text to display) and
+#  "time" (time to stay visible, optional and defaults to "updateTime") attributes
+#
+# Check out the examples bellow for more information.
+
+# This is a simple scoreboard with only the top and bottom lines animated
+simple:
+  titles: '   '
+  scores:
+    3: ''
+    2: '        &b&l%sapi_default_scurrentmana%'
+    1: ''
+
+# Scoreboard with a basic timing example
+customTiming:
+  updateTime: 100 # Any title or frame without a specified time will default to this
+  titles:
+    - text: '&c200 ticks/10 seconds title'
+      time: 200
+    - text: '&a100 ticks/5 seconds title'
+  scores:
+    6: '&7You can set a per title and score time'
+    5: '&7instead of using the default value'
+    4: ''
+    3:
+      - text: '&7This will last for &810 seconds'
+        time: 200
+      - text: '&7while this only lasts for &85 seconds'
+    2: ''
+    1:
+      - text: '&6Your current world is &7%world%&6.'
+        time: 60
+      - text: '&6There are &7%online% &6players online.'
+        time: 60
+
+# Scoreboard showing how conditions work
+conditional:
+  updateTime: 60
+  conditions: [ 'hasPermissionExample' ]
+  titles: '&cRestricted Scoreboard'
+  scores:
+    9: ''
+    8: '&7Scoreboards with a list of conditions require'
+    7: '&7that the player passes all of them.'
+    6: ''
+    5: '&7You can see this scoreboard because you'
+    4: '&7passed the &8hasPermissionExample &7condition.'
+    3:
+      conditions: [ 'equalsOperationExample' ]
+      frames: ''
+    2:
+      conditions: [ 'equalsOperationExample' ]
+      frames:
+        - '&7You can see this line because you passed..'
+        - '&7the &8equalsOperationExample &7condition.'
+    1: ''

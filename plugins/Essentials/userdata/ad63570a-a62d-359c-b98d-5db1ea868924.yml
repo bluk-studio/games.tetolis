@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 46.175.75.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1651925744952
+  login: 1651925711892
+money: '0'
+last-account-name: NeAttax
+lastlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 0.0
+  y: 77.0
+  z: -64.0
+  yaw: 0.0
+  pitch: 0.0
+logoutlocation:
+  world: ad4acf60-9e5c-4a07-92cb-86fd2997e7f2
+  world-name: world
+  x: 38.26603832104608
+  y: -4.0
+  z: -251.811945200811
+  yaw: -149.40025329589844
+  pitch: -6.122212886810303

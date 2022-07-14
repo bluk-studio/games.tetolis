@@ -1,0 +1,4 @@
+function RentableAreas_sendNotification(player: player, icon: item, message: string):
+  # send title "%{_icon}%" with subtitle "%{_message}%" to {_player}
+  # show toast to {_player} titled {_message} with icon {_icon} using frame task
+  send toast to {_player} titled {_message} with the icon {_icon} using frame task

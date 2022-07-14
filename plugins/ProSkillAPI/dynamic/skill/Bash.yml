@@ -1,0 +1,131 @@
+Bash: 
+  name: 'Bash'
+  type: 'Пассивный'
+  max-level: 6
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '20'
+    cooldown-scale: '-1'
+    mana-base: '20'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'GLOWSTONE_DUST'
+  icon-data: 25
+  icon-durability: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&2На 5 уровне эффекты на 1'
+  - '&2сек дольше'
+  - ''
+  - '&2Cooldown: {attr:cooldown}'
+  - '&2Damage: {attr:damage.value}'
+  desc:  []
+  components: 
+    Physical Damage-a: 
+      type: 'trigger'
+      indicator: 'None'
+      data: 
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'True'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: '0'
+        dmg-max: '999'
+      children: 
+        Tool-b: 
+          type: 'condition'
+          indicator: 'None'
+          data: 
+            icon-key: ''
+            material: 'Any'
+            tool: 'Any'
+          children: 
+            Linear-c: 
+              type: 'target'
+              indicator: 'None'
+              data: 
+                icon-key: ''
+                range-base: '3'
+                range-scale: '0'
+                tolerance-base: '1.5'
+                tolerance-scale: '0'
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: '99'
+                max-scale: '0'
+              children: 
+                Skill Level-d: 
+                  type: 'condition'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    skill: 'Bash'
+                    min-level: '5'
+                    max-level: '6'
+                  children: 
+                    Potion-e: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Slow'
+                        ambient: 'True'
+                        tier-base: '5'
+                        tier-scale: '0'
+                        seconds-base: '3'
+                        seconds-scale: '0'
+                      children:  {}
+                    Potion-f: 
+                      type: 'mechanic'
+                      indicator: 'None'
+                      data: 
+                        icon-key: ''
+                        counts: 'True'
+                        potion: 'Blindness'
+                        ambient: 'True'
+                        tier-base: '1'
+                        tier-scale: '0'
+                        seconds-base: '2'
+                        seconds-scale: '0'
+                      children:  {}
+                Potion-g: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Slow'
+                    ambient: 'True'
+                    tier-base: '5'
+                    tier-scale: '0'
+                    seconds-base: '2'
+                    seconds-scale: '0'
+                  children:  {}
+                Potion-h: 
+                  type: 'mechanic'
+                  indicator: 'None'
+                  data: 
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Blindness'
+                    ambient: 'True'
+                    tier-base: '1'
+                    tier-scale: '0'
+                    seconds-base: '2'
+                    seconds-scale: '0'
+                  children:  {}
